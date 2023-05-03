@@ -1,0 +1,17 @@
+<link rel='stylesheet' type='text/css' href='https://cdn-app2.securiti.ai/consent/cookie-consent.css' />
+<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer. -->
+<script>
+(function () {
+	var s = document.createElement('script');
+	s.src = 'https://cdn-app2.securiti.ai/consent/cookie-consent-sdk.js';
+	s.setAttribute('data-tenant-uuid', '1ed59718-5e58-48c6-b8ff-1a31e86f90b4');
+	s.setAttribute('data-domain-uuid', '7b8dde90-1b7f-4eb6-9b91-3aac1e40a424');
+	s.setAttribute('data-backend-url', 'https://app2.securiti.ai');
+	s.defer = true;
+	var parent_node = document.head || document.body;
+	parent_node.appendChild(s);
+	s.addEventListener('load', function() { window.initCmp(); });
+})()
+</script>
+<!-- You may style the button by overriding class "cmp-revoke-consent" -->
+<button class="cmp-revoke-consent">Revoke Consent</button>

@@ -1,0 +1,38 @@
+[
+    {
+        "fields": [
+            {
+                "type": "text",
+                "labelName": "Name",
+                "name": "name",
+                "selector": "[name = \"name\"]"
+            },
+            {
+                "type": "text",
+                "labelName": "email",
+                "name": "email",
+                "selector": "[name = \"email\"]"
+            },
+            {
+                "type": "text",
+                "labelName": "phone",
+                "name": "phone",
+                "selector": "[name = \"phone\"]"
+            },
+            {
+                "type": "checkbox",
+                "labelName": "Send copy to my-email",
+                "name": "copy-mail",
+                "selector": "[name = \"copy-mail\"]"
+            },
+            {
+                "type": "checkbox",
+                "labelName": "Send new email",
+                "name": "Tech-mail",
+                "selector": "[name = \"Tech-mail\"]"
+            }
+        ],
+        "submit": "[class = \"contact100-form-btn\"]",
+        "formSelector": "[class = \"contact100-form validate-form\"]"
+    }
+]

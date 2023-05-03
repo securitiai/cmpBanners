@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Security-Policy"
+	content="default-src 'self'; script-src 'self' https://cdn-app2.securiti.ai; style-src 'self' https://cdn-app2.securiti.ai/consent/cookie-consent.css https://cdn-app2.securiti.ai/consent/styles/559418d5-6202-4f42-afd5-8e2b7365039c/ddb60a0a-8c14-450c-9694-72df1474e23b.css; connect-src 'self' https://cdn-app2.securiti.ai https://app2.securiti.ai/core/v1/utils/geo/location https://app2.securiti.ai/privaci/v1/consent/cookie/singleupload">
+
+<link rel='stylesheet' type='text/css' href='https://cdn-app2.securiti.ai/consent/cookie-consent.css' />
+<link rel='stylesheet' type='text/css'
+	href='https://cdn-app2.securiti.ai/consent/styles/559418d5-6202-4f42-afd5-8e2b7365039c/ddb60a0a-8c14-450c-9694-72df1474e23b.css' />
+
+<body>
+
+	<h1>Csp Banners </h1>
+
+
+	<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer. -->
+	<script defer data-strict-csp src="https://cdn-app2.securiti.ai/consent/cookie-consent-sdk-strict-csp.js"
+		data-tenant-uuid="559418d5-6202-4f42-afd5-8e2b7365039c" data-domain-uuid="ddb60a0a-8c14-450c-9694-72df1474e23b"
+		data-backend-url="https://app2.securiti.ai">
+		</script>
+
+	<!-- You may style the button by overriding class "cmp-revoke-consent" -->
+	<button class="cmp-revoke-consent">Revoke Consent</button>
+
+</body>
+
+</html>
