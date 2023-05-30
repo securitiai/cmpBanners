@@ -1,0 +1,38 @@
+[
+    {
+        "fields": [
+            {
+                "type": "text",
+                "labelName": "name",
+                "name": "name",
+                "selector": "[name = \"name\"]"
+            },
+            {
+                "type": "text",
+                "labelName": "email",
+                "name": "email",
+                "selector": "[name = \"email\"]"
+            },
+            {
+                "type": "text",
+                "labelName": "phone",
+                "name": "phone",
+                "selector": "[name = \"phone\"]"
+            },
+            {
+                "type": "checkbox",
+                "labelName": "Can we share new advertisements",
+                "name": "advertisements",
+                "selector": "[name = \"advertisements\"]"
+            },
+            {
+                "type": "checkbox",
+                "labelName": "Can we contact you",
+                "name": "contactme",
+                "selector": "[name = \"contactme\"]"
+            }
+        ],
+        "submit": "[class = \"contact100-form-btn\"]",
+        "formSelector": "[class = \"contact100-form validate-form\"]"
+    }
+]
