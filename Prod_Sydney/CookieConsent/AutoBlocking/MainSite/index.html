@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <h1>auto blocking Combination of case</h1>
+
+    <script type="text/javascript"
+        src="https://cdn-app4.securiti.ai/consent/auto_blocking/9cc90ffa-4f61-4870-9b06-56884f9c7165/7f997f2f-48c9-4985-9a5d-e5d65e275d41.js"></script>
+
+    <link rel='stylesheet' type='text/css' href='https://cdn-app4.securiti.ai/consent/cookie-consent.css' />
+</head>
+
+<body>
+    <h2>Autoblocking old domain + old Snippet</h2>
+    <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer. -->
+    <script>
+        (function () {
+            var s = document.createElement('script');
+            s.src = 'https://cdn-app4.securiti.ai/consent/cookie-consent-sdk.js';
+            s.setAttribute('data-tenant-uuid', '9cc90ffa-4f61-4870-9b06-56884f9c7165');
+            s.setAttribute('data-domain-uuid', '7f997f2f-48c9-4985-9a5d-e5d65e275d41');
+            s.setAttribute('data-backend-url', 'https://app4.securiti.ai');
+            s.defer = true;
+            var parent_node = document.head || document.body;
+            parent_node.appendChild(s);
+            s.addEventListener('load', function () { window.initCmp(); });
+        })()
+    </script>
+
+
+    <!-- You may style the button by overriding class "cmp-revoke-consent" -->
+    <button class="cmp-revoke-consent">Revoke Consent</button>
+
+    <script src="adnantesting.js"></script>
+
+    <!-- <script src="https://securitiai.github.io/cmpBanners/Prod_Sydney/CookieConsent/AutoBlocking/CookieOneJs/Cookie1.js"></script>
+
+    <script src="https://securitiai.github.io/cmpBanners/Prod_Sydney/CookieConsent/AutoBlocking/CookieTwoJs/Cookie2.js"></script> -->
+    <script src="https://securitiai.github.io/cmpBanners/Prod_Sydney/CookieConsent/AutoBlocking/CookieOneJs/Cookie1.js"></script>
+
+    <script src="https://securitiai.github.io/cmpBanners/Prod_Sydney/CookieConsent/AutoBlocking/CookieTwoJs/Cookie2.js"></script>
+
+
+</body>
+
+</html>
