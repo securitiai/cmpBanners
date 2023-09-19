@@ -1,6 +1,5 @@
  <!DOCTYPE html>
 <html lang="en">
-  <link rel='stylesheet' type='text/css' href='https://cdn-prod.eu.securiti.ai/consent/cookie-consent.css' />
 
 <head>
   <!-- basic -->
@@ -30,27 +29,33 @@
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+
+
+<script type="text/javascript" src="https://cdn-app4.securiti.ai/consent/sdk-stub.js" defer></script>
+<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+<script>
+(function () {
+	var s = document.createElement('script');
+	s.src = 'https://cdn-app4.securiti.ai/consent/cookie-consent-sdk-loader.js';
+	s.setAttribute('data-tenant-uuid', '9cc90ffa-4f61-4870-9b06-56884f9c7165');
+	s.setAttribute('data-domain-uuid', 'b4d46d72-336b-4d71-a6be-4b6927c421eb');
+	s.setAttribute('data-backend-url', 'https://app4.securiti.ai');
+	s.defer = true;
+	var parent_node = document.head || document.body;
+	parent_node.appendChild(s);
+})()
+</script>
+
+<!-- You may style the button by overriding class "cmp-revoke-consent" -->
+<button class="cmp-revoke-consent">Revoke Consent</button>
+
 </head>
+
 <!-- body -->
 
 <body class="main-layout">
-<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer. -->
-  <script>
-    (function () {
-      var s = document.createElement('script');
-      s.src = 'https://cdn-prod.eu.securiti.ai/consent/cookie-consent-sdk.js';
-      s.setAttribute('data-tenant-uuid', '35b6a775-192e-4b7d-95c9-aea5b30d9f58');
-      s.setAttribute('data-domain-uuid', 'ba21ca4b-a6de-4ce4-a237-466b850a635b');
-      s.setAttribute('data-backend-url', 'https://app.eu.securiti.ai');
-      s.defer = true;
-      var parent_node = document.head || document.body;
-      parent_node.appendChild(s);
-      s.addEventListener('load', function() { window.initCmp(); });
-    })()
-    </script>
-<!-- You may style the button by overriding class "cmp-revoke-consent" -->
-<button class="cmp-revoke-consent">Revoke Consent</button>
-  <!-- loader  -->
+<h1>This is the implicit banner for Sydeny Prod
+</h1>
   <div class="loader_bg">
     <div class="loader"><img src="images/loading.gif" alt="#" /></div>
   </div>
