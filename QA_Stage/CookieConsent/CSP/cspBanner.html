@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn-qa-stage.securiti.xyz; style-src 'self' https://cdn-qa-stage.securiti.xyz/consent/cookie-consent.css https://cdn-qa-stage.securiti.xyz/consent/styles/b56fe2da-322f-4ce4-9d76-db36235070c5/6b7c8062-693c-4d45-8eec-2fa294dfefc5.css; connect-src 'self' https://cdn-qa-stage.securiti.xyz https://qa-stage.securiti.xyz/core/v1/utils/geo/location https://qa-stage.securiti.xyz/privaci/v1/consent/cookie/singleupload">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel='stylesheet' type='text/css' href='https://cdn-qa-stage.securiti.xyz/consent/cookie-consent.css' />
+<link rel='stylesheet' type='text/css'
+	href='https://cdn-qa-stage.securiti.xyz/consent/styles/b56fe2da-322f-4ce4-9d76-db36235070c5/6b7c8062-693c-4d45-8eec-2fa294dfefc5.css' />
+
+<body>
+
+	<h1>This is for QA-Stage CSP on : https://www.of**ce.com</h1>
+	<h1>This banner has absolute old css PATH, and domin is white listed for .js file</h1>
+	<h1>New Domain + Old Snippet</h1>
+
+	<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer. -->
+	<script defer data-strict-csp src="https://cdn-qa-stage.securiti.xyz/consent/cookie-consent-sdk-strict-csp.js"
+		data-tenant-uuid="b56fe2da-322f-4ce4-9d76-db36235070c5" 
+		data-domain-uuid="6b7c8062-693c-4d45-8eec-2fa294dfefc5"
+		data-backend-url="https://qa-stage.securiti.xyz">
+		</script>
+
+	<!-- You may style the button by overriding class "cmp-revoke-consent" -->
+	<button class="cmp-revoke-consent">Revoke Consent</button>
+</body>
+
+</html>
