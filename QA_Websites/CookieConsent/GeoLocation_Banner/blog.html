@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <link rel='stylesheet' type='text/css' href='https://cdn-qa.securiti.xyz/consent/cookie-consent.css' />
     <!-- basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,28 +23,13 @@
     <link rel="stylesheet" href="css/responsive.css">
     <!-- awesome fontfamily -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+
 </head>
 <!-- body -->
 
 <body class="main-layout blog_page">
-    <script type="text/javascript" src="https://cdn-qa.securiti.xyz/consent/sdk-stub.js" defer></script>
-    <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer. -->
-    <script>
-        (function () {
-            var s = document.createElement('script');
-            s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk.js';
-            s.setAttribute('data-tenant-uuid', '51a3e686-fb5a-4c78-bd45-1a87627c4ce2');
-            s.setAttribute('data-domain-uuid', '57c89ecb-8f48-4d20-a199-7bf474ac07e7');
-            s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
-            s.defer = true;
-            var parent_node = document.head || document.body;
-            parent_node.appendChild(s);
-            s.addEventListener('load', function () { window.initCmp(); });
-        })()
-    </script>
+ <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+
     <!-- loader  -->
     <div class="loader_bg">
         <div class="loader"><img src="images/loading.gif" alt="" /></div>

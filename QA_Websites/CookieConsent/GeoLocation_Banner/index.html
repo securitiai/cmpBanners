@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel='stylesheet' type='text/css' href='https://cdn-qa.securiti.xyz/consent/cookie-consent.css' />
     <!-- basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,6 +31,24 @@
 <!-- body -->
 
 <body class="main-layout">
+
+    <script>
+        (function () {
+            var s = document.createElement('script');
+            s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk.js';
+            s.setAttribute('data-tenant-uuid', '51a3e686-fb5a-4c78-bd45-1a87627c4ce2');
+            s.setAttribute('data-domain-uuid', '57c89ecb-8f48-4d20-a199-7bf474ac07e7');
+            s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+            s.defer = true;
+            var parent_node = document.head || document.body;
+            parent_node.appendChild(s);
+            s.addEventListener('load', function() { window.initCmp(); });
+        
+        })()
+        </script>
+        <!-- You may style the button by overriding class "cmp-revoke-consent" -->
+    <button class="cmp-revoke-consent">Revoke Consent</button>
+
     <!-- loader  -->
     <div class="loader_bg">
         <div class="loader"><img src="images/loading.gif" alt="" /></div>
