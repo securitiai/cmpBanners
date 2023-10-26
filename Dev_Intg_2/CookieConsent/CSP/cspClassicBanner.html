@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Security-Policy"
+	content="default-src 'self'; script-src 'self' https://cdn-dev-intg-2.securiti.xyz; style-src 'self' https://cdn-dev-intg-2.securiti.xyz/consent/cookie-consent-latest.css https://cdn-dev-intg-2.securiti.xyz/consent/styles/9be22a64-23ea-4e11-8133-986896d078aa/6500bbeb-647c-4d7b-9567-80f7c20f3075.css; connect-src 'self' https://cdn-dev-intg-2.securiti.xyz https://dev-intg-2.securiti.xyz/core/v1/utils/geo/location https://dev-intg-2.securiti.xyz/privaci/v1/consent/cookie/singleupload">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<body>
+
+	<h1>This is for Dev-Intg 2 CSP on test***demo : https://www.of**ce.com</h1>
+	<h1>This banner has absolute old css PATH, and domin is white listed for .js file</h1>
+
+
+	<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+	<script defer data-strict-csp data-skip-css="false"
+		src="https://cdn-dev-intg-2.securiti.xyz/consent/cookie-consent-sdk-loader-strict-csp.js"
+		data-tenant-uuid="9be22a64-23ea-4e11-8133-986896d078aa" data-domain-uuid="6500bbeb-647c-4d7b-9567-80f7c20f3075"
+		data-backend-url="https://dev-intg-2.securiti.xyz">
+		</script>
+
+	<!-- You may style the button by overriding class "cmp-revoke-consent" -->
+	<button class="cmp-revoke-consent">Revoke Consent</button>
+</body>
+
+</html>
