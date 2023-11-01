@@ -3,9 +3,9 @@
 
 <head>
     <h1 style="color: brown;">Banner Info:</h1>
-    <div>Environment Name: qa</div>
+    <div>Environment Name: dev-intg-2</div>
     <div>Tenant Name : ***************</div>
-    <div>Domain Name: gdprclassicbasic</div>
+    <div>Domain Name: iabclassic1optin</div>
     <div>Domain Id: -</div>
     <div>complianceType: opt-out</div>
     <div>| IAB + Enabled Select GPP section + classic + Basic Compliance + default purpose and features and vendors+Default location [use this for language test]
@@ -15,29 +15,29 @@
 
 
     <!-- Inject your securiti body code here -->
-   
-
+    <link rel='stylesheet' type='text/css' href='https://cdn-dev-intg-2.securiti.xyz/consent/cookie-consent.css' />
+    
 <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
     <script>
         (function () {
             var s = document.createElement('script');
-            s.src = 'https://cdn-dev-intg-2.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+            s.src = 'https://cdn-dev-intg-2.securiti.xyz/consent/cookie-consent-sdk.js';
             s.setAttribute('data-tenant-uuid', '9be22a64-23ea-4e11-8133-986896d078aa');
-            s.setAttribute('data-domain-uuid', 'a630eea5-42bc-4f81-8273-e89b439772e1');
+            s.setAttribute('data-domain-uuid', 'b4764666-a5c4-4ff7-83b4-dd2fdf265ae6');
             s.setAttribute('data-backend-url', 'https://dev-intg-2.securiti.xyz');
-            s.setAttribute('data-skip-css', 'false');
             s.defer = true;
             var parent_node = document.head || document.body;
             parent_node.appendChild(s);
+            s.addEventListener('load', function() { window.initCmp(); });
+        
         })()
         </script>
-
     <!-- Inject your securiti revoke button here -->
 <!-- You may style the button by overriding class "cmp-revoke-consent" -->
 <button class="cmp-revoke-consent">Revoke Consent</button>
 </head>
 <body>
-    <img srcset="https://onepagelove.imgix.net/2017/01/opl-big-19.jpg?auto=compress, https://onepagelove.imgix.net/2017/01/opl-big-19.jpg?auto=compress 2x" src="https://onepagelove.imgix.net/2017/01/opl-big-19.jpg?auto=compress" alt="LeadGen Website Screenshot" data-pin-url="https://onepagelove.com/leadgen" data-pin-description="'LeadGen' is a very impressive One Page HTML template that includes a powerful Landing Page builder. There are over 30 pre-made demos covering nearly every industry imaginable. This demo seen here is my favorite - the Product Landing Page. Huge value for money here at only twenty bucks!">
+    <img height="600", width="1500" srcset="https://securitiai.github.io/cmpBanners/Photos/bannerPhoto.jpeg, https://securitiai.github.io/cmpBanners/Photos/bannerPhoto.jpeg 2x" src="https://securitiai.github.io/cmpBanners/Photos/bannerPhoto.jpeg" alt="LeadGen Website Screenshot" data-pin-url="https://onepagelove.com/leadgen" data-pin-description="'LeadGen' is a very impressive One Page HTML template that includes a powerful Landing Page builder. There are over 30 pre-made demos covering nearly every industry imaginable. This demo seen here is my favorite - the Product Landing Page. Huge value for money here at only twenty bucks!">
 
 </body>
 
