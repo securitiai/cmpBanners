@@ -2,7 +2,7 @@
 <head>
 <h1>auto blocking Combination of case | QA - Stage</h1>
 
-    <script type="text/javascript" src="https://cdn-qa-stage.securiti.xyz/consent/auto_blocking/b56fe2da-322f-4ce4-9d76-db36235070c5/39495027-fb81-42b9-b17a-76227ddac2a2.js"></script>
+<script type="text/javascript" src="https://cdn-qa-stage.securiti.xyz/consent/auto_blocking/b56fe2da-322f-4ce4-9d76-db36235070c5/1653ea9d-347f-4100-87e9-c54f2529943b.js"></script>
 
     <link rel='stylesheet' type='text/css' href='https://cdn-qa-stage.securiti.xyz/consent/cookie-consent.css' />
 
@@ -11,21 +11,21 @@
 <body>
 
     <h1>Autoblocking + Unknown Initiators </h1>
-    <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
-    <script>
-(function () {
-	var s = document.createElement('script');
-	s.src = 'https://cdn-qa-stage.securiti.xyz/consent/cookie-consent-sdk.js';
-	s.setAttribute('data-tenant-uuid', 'b56fe2da-322f-4ce4-9d76-db36235070c5');
-	s.setAttribute('data-domain-uuid', '39495027-fb81-42b9-b17a-76227ddac2a2');
-	s.setAttribute('data-backend-url', 'https://qa-stage.securiti.xyz');
-	s.defer = true;
-	var parent_node = document.head || document.body;
-	parent_node.appendChild(s);
-	s.addEventListener('load', function() { window.initCmp(); });
-
-})()
-</script>
+   <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+<script>
+	(function () {
+		var s = document.createElement('script');
+		s.src = 'https://cdn-qa-stage.securiti.xyz/consent/cookie-consent-sdk.js';
+		s.setAttribute('data-tenant-uuid', 'b56fe2da-322f-4ce4-9d76-db36235070c5');
+		s.setAttribute('data-domain-uuid', '1653ea9d-347f-4100-87e9-c54f2529943b');
+		s.setAttribute('data-backend-url', 'https://qa-stage.securiti.xyz');
+		s.defer = true;
+		var parent_node = document.head || document.body;
+		parent_node.appendChild(s);
+		s.addEventListener('load', function() { window.initCmp(); });
+	
+	})()
+	</script>
 
 <!-- You may style the button by overriding class "cmp-revoke-consent" -->
 <button class="cmp-revoke-consent">Revoke Consent</button>
