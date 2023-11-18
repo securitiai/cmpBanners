@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-us" prefix="og: http://ogp.me/ns#">
+
+<head>
+  <h1 style="color: brown;">Banner Info:</h1>
+
+  <h1> QA | Classic banner + opt-out compliance + manual</h1>
+  </br>
+  </br>
+
+  
+
+<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+  <script>
+    (function () {
+      var s = document.createElement('script');
+      s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+      s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
+      s.setAttribute('data-domain-uuid', '90e0a8fd-389e-4c12-aa05-90378a1c333b');
+      s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+      s.setAttribute('data-skip-css', 'false');
+      s.defer = true;
+      var parent_node = document.head || document.body;
+      parent_node.appendChild(s);
+    })()
+    </script>
+    
+<!-- You may style the button by overriding class "cmp-revoke-consent" -->
+<button class="cmp-revoke-consent">Revoke Consent</button>
+</head>
+
+<body>
+  <!-- <img height="600", width="1500" srcset="https://securitiai.github.io/cmpBanners/Photos/bannerPhoto.jpeg, https://securitiai.github.io/cmpBanners/Photos/bannerPhoto.jpeg 2x" src="https://securitiai.github.io/cmpBanners/Photos/bannerPhoto.jpeg" alt="LeadGen Website Screenshot" data-pin-url="https://onepagelove.com/leadgen" data-pin-description="'LeadGen' is a very impressive One Page HTML template that includes a powerful Landing Page builder. There are over 30 pre-made demos covering nearly every industry imaginable. This demo seen here is my favorite - the Product Landing Page. Huge value for money here at only twenty bucks!"> -->
+  <svg width="365" height="185">
+    <!-- Top -->
+    <rect x="70" y="10" width="220" height="130" fill="transparent" rx="150" stroke="crimson" stroke-width="10" />
+
+    <!-- Body -->
+    <rect x="10" y="70" width="340" height="80" fill="crimson" rx="30" />
+
+    <g>
+      <!-- Left line -->
+      <line x1="145" y1="10" x2="145" y2="80" stroke="crimson" stroke-width="10" />
+
+      <!-- Right line -->
+      <line x1="215" y1="10" x2="215" y2="80" stroke="crimson" stroke-width="10" />
+    </g>
+
+    <g>
+      <!-- Left bumper -->
+      <rect x="0" y="110" width="40" height="20" fill="#999" rx="10" />
+
+      <!-- Right bumper -->
+      <rect x="325" y="110" width="40" height="20" fill="#999" rx="10" />
+    </g>
+
+    <!-- Left wheel -->
+    <g>
+      <circle r="40px" fill="#222" stroke="white" stroke-width="7" cx="90" cy="140" />
+      <circle r="15px" fill="#555" cx="90" cy="140" />
+    </g>
+
+    <!-- Right wheel -->
+    <g>
+      <circle r="40px" fill="#222" stroke="white" stroke-width="7" cx="270" cy="140" />
+      <circle r="15px" fill="#555" cx="270" cy="140" />
+    </g>
+
+    <g>
+      <!-- Gold light -->
+      <circle r="15px" fill="gold" cx="340" cy="90" />
+
+      <!-- Orange light -->
+      <circle r="10px" fill="orange" cx="15" cy="90" />
+    </g>
+  </svg>
+
+</body>
+
+</html>
