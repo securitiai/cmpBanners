@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!-- saved from url=(0112)https://mohitchoudhary747.github.io/cmpBanners/QA_Websites/OtherForms_Arsa/ContactForm/RadiobuttonFormbased.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Contact V7 multiple consent on QA after changes</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="https://mohitchoudhary747.github.io/cmpBanners/QA_Websites/OtherForms_Arsa/ContactForm/images/icons/favicon.ico">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./Contact V7 multiple consent on QA after changes1_files/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./Contact V7 multiple consent on QA after changes1_files/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./Contact V7 multiple consent on QA after changes1_files/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./Contact V7 multiple consent on QA after changes1_files/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./Contact V7 multiple consent on QA after changes1_files/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./Contact V7 multiple consent on QA after changes1_files/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./Contact V7 multiple consent on QA after changes1_files/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./Contact V7 multiple consent on QA after changes1_files/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./Contact V7 multiple consent on QA after changes1_files/util.css">
+	<link rel="stylesheet" type="text/css" href="./Contact V7 multiple consent on QA after changes1_files/main.css">
+<!--===============================================================================================-->
+<script async="" src="./Contact V7 multiple consent on QA after changes1_files/fingerprint2.js"></script></head>
+<body data-new-gr-c-s-check-loaded="14.1054.0" data-gr-ext-installed="">
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					Testing Form
+				</span>
+
+				<div class="wrap-input100 validate-input" data-validate="Name is required">
+					<input class="input100" id="name" type="text" name="name" placeholder="Name">
+					<label class="label-input100" for="name">
+						<span class="lnr lnr-user"></span>
+					</label>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+					<input class="input100" id="email" type="text" name="email" placeholder="Email">
+					<label class="label-input100" for="email">
+						<span class="lnr lnr-envelope"></span>
+					</label>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Phone is required">
+					<input class="input100" id="phone" type="text" name="phone" placeholder="Phone">
+					<label class="label-input100" for="phone">
+						<span class="lnr lnr-phone-handset"></span>
+					</label>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Message is required">
+					<textarea class="input100" name="message" placeholder="Your message..."></textarea>
+				</div>
+				
+				 <p>Please Select the spanish one</p>
+  
+
+				<div class="contact100-form-checkbox">
+					<input type="radio" id="contactChoice1" name="contact" value="email">
+    <label for="contactChoice1">hola, escribo en español para phuski</label>
+    <input type="radio" id="contactChoice2" name="contact" value="phone">
+    <label for="contactChoice2">Phone</label>
+    <input type="radio" id="contactChoice3" name="contact" value="mail">
+    <label for="contactChoice3">Mail</label>
+  
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn">
+							Send Email
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="./Contact V7 multiple consent on QA after changes1_files/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="./Contact V7 multiple consent on QA after changes1_files/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="./Contact V7 multiple consent on QA after changes1_files/popper.js"></script>
+	<script src="./Contact V7 multiple consent on QA after changes1_files/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="./Contact V7 multiple consent on QA after changes1_files/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="./Contact V7 multiple consent on QA after changes1_files/moment.min.js"></script>
+	<script src="./Contact V7 multiple consent on QA after changes1_files/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="./Contact V7 multiple consent on QA after changes1_files/countdowntime.js"></script>
+<!--===============================================================================================-->
+	
+                                
+                                <script src='https://cdn-qa.securiti.xyz/consent/form-consent-sdk.js'></script>
+                                <script>window.addEventListener('load',
+    FormConsentSDK.initialize({
+        codeGenMetadata:{"formPropertyId":"4","formSelector":"[class*=\"contact100-form validate-form\"]","subjectIdentifiers":[{"name":"Name","selector":"[name = \"name\"]","isPrimary":false},{"name":"Email","selector":"[name = \"email\"]","isPrimary":true},{"name":"Phone","selector":"[name = \"phone\"]","isPrimary":true}],"consentIdentifiers":[{"type":"radio","name":"contact","selector":"[name = \"hellow world\"]","propertyId":190982,"consentValue":"hola, escribo en español para phuski"}],"consentTrigger":{"action":"click","selector":"[class = \"contact100-form-btn\"]"}},
+        url: 'https://qa.securiti.xyz/privaci/v1/',
+        authToken:'7491b14f-dc16-465b-9b05-d1dfe0600675',
+        orgId:'1',
+        onConsentSuccess: null,
+        onConsentFailure: null
+    })
+)</script>
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
