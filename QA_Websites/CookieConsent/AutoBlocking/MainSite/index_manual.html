@@ -5,36 +5,39 @@
     <h1>Manual Deployment</h1>
 
     <script type="text/javascript"
-        src="https://cdn-qa.securiti.xyz/consent/auto_blocking/b29eb313-51d2-457d-891e-721e1f67b139/b656653b-d97a-45b4-a033-a1bae17a12e5.js"></script>
-
-    <link rel='stylesheet' type='text/css' href='https://cdn-qa.securiti.xyz/consent/cookie-consent.css' />
+        src="https://cdn-qa.securiti.xyz/consent/auto_blocking/b29eb313-51d2-457d-891e-721e1f67b139/9ccbeefc-9076-4418-862b-08559ffb95ad.js"></script>
 </head>
 
 <body>
-    <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer. -->
+
+    <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
     <script>
         (function () {
             var s = document.createElement('script');
-            s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk.js';
+            s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
             s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
-            s.setAttribute('data-domain-uuid', 'b656653b-d97a-45b4-a033-a1bae17a12e5');
+            s.setAttribute('data-domain-uuid', '9ccbeefc-9076-4418-862b-08559ffb95ad');
             s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+            s.setAttribute('data-skip-css', 'false');
             s.defer = true;
             var parent_node = document.head || document.body;
             parent_node.appendChild(s);
-            s.addEventListener('load', function () { window.initCmp(); });
         })()
     </script>
 
+    <!-- You may style the button by overriding class "cmp-revoke-consent" -->
+    <button class="cmp-revoke-consent">Revoke Consent</button>
 
     <!-- You may style the button by overriding class "cmp-revoke-consent" -->
     <button class="cmp-revoke-consent">Revoke Consent</button>
 
     <script src="adnantesting.js"></script>
 
-    <script src="https://securitiai.github.io/cmpBanners/QA_Websites/CookieConsent/AutoBlocking/CookieOneJs/Cookie1.js"></script>
+    <script
+        src="https://securitiai.github.io/cmpBanners/QA_Websites/CookieConsent/AutoBlocking/CookieOneJs/Cookie1.js"></script>
 
-    <script src="https://securitiai.github.io/cmpBanners/QA_Websites/CookieConsent/AutoBlocking/CookieTwoJs/Cookie2.js"></script>
+    <script
+        src="https://securitiai.github.io/cmpBanners/QA_Websites/CookieConsent/AutoBlocking/CookieTwoJs/Cookie2.js"></script>
 
 
 </body>
