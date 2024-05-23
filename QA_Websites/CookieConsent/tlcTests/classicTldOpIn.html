@@ -4,22 +4,24 @@
 <head>
   <h1 style="color: brown;">Banner Info:</h1>
   in
-  <h1 style="color: green;"> Tld classic banner | banner consent retain and reload banner test | QA</h1>
+  <h1 style="color: green;"> Tld classic banner | banner consent retain and reload banner test | Automatic | QA</h1>
   </br>
   </br>
   <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
-  <script>
-    (function () {
-      var s = document.createElement('script');
-      s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
-      s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
-      s.setAttribute('data-domain-uuid', '1c7b0c5e-beb0-4a88-97d2-124a35ffc625');
-      s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
-      s.setAttribute('data-skip-css', 'false');
-      s.defer = true;
-      var parent_node = document.head || document.body;
-      parent_node.appendChild(s);
-    })()
+  
+<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+<script>
+  (function () {
+    var s = document.createElement('script');
+    s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+    s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
+    s.setAttribute('data-domain-uuid', 'de6fa313-ae87-4d87-b449-ed7ed06c5d56');
+    s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+    s.setAttribute('data-skip-css', 'false');
+    s.defer = true;
+    var parent_node = document.head || document.body;
+    parent_node.appendChild(s);
+  })()
   </script>
   <!-- Inject your securiti revoke button here -->
   <!-- You may style the button by overriding class "cmp-revoke-consent" -->
