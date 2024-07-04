@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <h1>manual QA auto blocking Combination of case</h1>
+
+    <script type="text/javascript" src="https://cdn-qa.securiti.xyz/consent/auto_blocking/b29eb313-51d2-457d-891e-721e1f67b139/a104cd7c-9ebd-42f3-a7b5-009032100580.js"></script>
+</head>
+
+<body>
+ 
+<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+<script>
+    (function () {
+        var s = document.createElement('script');
+        s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+        s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
+        s.setAttribute('data-domain-uuid', 'a104cd7c-9ebd-42f3-a7b5-009032100580');
+        s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+        s.setAttribute('data-skip-css', 'false');
+        s.defer = true;
+        var parent_node = document.head || document.body;
+        parent_node.appendChild(s);
+    })()
+    </script>
+
+
+
+    <!-- You may style the button by overriding class "cmp-revoke-consent" -->
+    <button class="cmp-revoke-consent">Revoke Consent</button>
+
+    <script src="./adnantesting.js"></script>
+
+    <script src="./Cookie1.js"></script>
+
+    <script src="./Cookie2.js"></script>
+
+
+</body>
+
+</html>
