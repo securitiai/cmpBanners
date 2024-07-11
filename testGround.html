@@ -1,18 +1,44 @@
 <!DOCTYPE html>
 <html lang="en-us" prefix="og: http://ogp.me/ns#">
 
-
-
 <head>
+  
   <h1 style="color: brown;">Banner Info:</h1>
-
   <h1 style="color: green;"> Test Ground for any local code check | Any environment</h1>
+
+<!-- ************************** -->
+<style>
+  #logbutton {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px; /* Adjust top position as needed */
+    right: 20px; /* Adjust right position as needed */
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+</style>
+  <!-- Print UUID to console messages-->
+  <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidconsole.js"> </script>
+    <!-- Print UUID to Page -->
+  <button id="logbutton" onclick="displayLogs()">Show Coaptured Consent UUID</button>
+  <ul style="background-color: beige;" id="logList"></ul>
+  <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidpage.js"></script>
+
+  <!-- ***************** -->
+
   </br>
   </br>
   <link rel='stylesheet' type='text/css' href='https://cdn-qa.securiti.xyz/consent/cookie-consent.css' />
+  
 
-  <!-- Print UUID -->
-  <script src="https://securitiai.github.io/cmpBanners/printuuid.js"> </script>
 
   <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
   <script defer data-strict-csp data-skip-css="false"

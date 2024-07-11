@@ -6,7 +6,7 @@
               var jsonString = this._body;
               var jsonObject = JSON.parse(jsonString);
               var uuid = jsonObject.uuid;
-              console.assert(false,"uuid=>"+uuid);
+              console.error("uuid=>"+uuid);
               var domain_id = jsonObject.domain_id;
               console.log("domain_id=>"+domain_id);
               var policy_version = jsonObject.policy_version;
@@ -15,7 +15,7 @@
       }, false);
     
       originalOpen.apply(this, arguments);
-    };
+};
     
     var originalSend = XMLHttpRequest.prototype.send;
     XMLHttpRequest.prototype.send = function(body) {
