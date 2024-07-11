@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-us" prefix="og: http://ogp.me/ns#">
+    <meta http-equiv="Content-Security-Policy" content="img-src 'self' https://code.highcharts.com;    default-src 'self' ; script-src 'self' 'unsafe-inline' https://cdn-qa.securiti.xyz; style-src 'self' 'unsafe-inline' https://cdn-qa.securiti.xyz/consent/cookie-consent-latest.css https://cdn-qa.securiti.xyz/consent/styles/b29eb313-51d2-457d-891e-721e1f67b139/77745371-d631-45d5-97f7-56f5000e7ffa.css; connect-src 'self' https://cdn-qa.securiti.xyz https://qa.securiti.xyz/core/v1/utils/geo/location https://qa.securiti.xyz/privaci/v1/consent/cookie/singleupload">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<head>
+  
+    {
+        padding-top: 30px;
+        text-align: center;
+      }
+    <h1 style="color: brown;">Banner Info:</h1>
+    <h2 style="color: aquamarine;">Environment Name: QA</h2>
+    <h2 style="color: aquamarine;">Domain Name: http://lumosity.com </h2>
+    <h2 style="color: aquamarine;">Auto Dep*****nt </h2>
+    <div>CSP + opt-out  + multi  + language + location + 16 theme + custom first and second party cookie
+        desc (Sanity) (Automatic Deployment)- </div>
+    </br>
+    </br>
+    <!-- Inject your securiti body code here -->
+
+    <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+    <script defer data-strict-csp data-skip-css="false"
+        src="https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader-strict-csp.js"
+        data-tenant-uuid="b29eb313-51d2-457d-891e-721e1f67b139" data-domain-uuid="77745371-d631-45d5-97f7-56f5000e7ffa"
+        data-backend-url="https://qa.securiti.xyz">
+        </script>
+    <!-- You may style the button by overriding class "cmp-revoke-consent" -->
+    <button class="cmp-revoke-consent">Revoke Consent</button>
+</head>
+<!-- <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+
+<div id="container"></div> -->
+<body>
+  
+<script>
+        
+  // Printing single upload payload Starts here
+ (function() {
+var originalOpen = XMLHttpRequest.prototype.open;
+XMLHttpRequest.prototype.open = function() {
+  this.addEventListener('readystatechange', function() {
+    // document.write('<h1 style="color: green;">Utility to get => uuid in console is implemneted in this banner </h1>');
+      if (this.readyState === 4 && this.responseURL.includes('singleupload')) { // Request is done
+          var jsonString = this._body;
+          var jsonObject = JSON.parse(jsonString);
+          var uuid = jsonObject.uuid;
+          console.assert(false,"uuid=>"+uuid);
+          var domain_id = jsonObject.domain_id;
+          console.log("domain_id=>"+domain_id);
+          var policy_version = jsonObject.policy_version;
+          console.log("policy_version=>"+policy_version);
+      }
+  }, false);
+
+  originalOpen.apply(this, arguments);
+};
+
+var originalSend = XMLHttpRequest.prototype.send;
+XMLHttpRequest.prototype.send = function(body) {
+  this._body = body;
+  originalSend.apply(this, arguments);
+};
+})();
+
+// Printing single upload payload ends here
+
+</script>
+
+    
+    <svg width="365" height="185">
+        <!-- Top -->
+          <rect x="70" y="10" width="220" height="130" fill="transparent" rx="150" stroke="crimson" stroke-width="10" />
+        
+        <!-- Body -->
+          <rect x="10" y="70" width="340" height="80" fill="crimson" rx="30" />
+          
+        <g>
+        <!-- Left line -->
+          <line x1="145" y1="10" x2="145" y2="80" stroke="crimson" stroke-width="10"/>
+    
+        <!-- Right line -->
+          <line x1="215" y1="10" x2="215" y2="80" stroke="crimson" stroke-width="10"/>
+        </g>
+      
+        <g>
+        <!-- Left bumper -->
+          <rect x="0" y="110" width="40" height="20" fill="#999" rx="10" />
+        
+        <!-- Right bumper -->
+          <rect x="325" y="110" width="40" height="20" fill="#999" rx="10" />
+        </g>  
+      
+        <!-- Left wheel -->
+        <g>
+          <circle r="40px" fill="#222" stroke="white" stroke-width="7" cx="90" cy="140"/>    
+          <circle r="15px" fill="#555" cx="90" cy="140"/>
+        </g>
+      
+        <!-- Right wheel -->
+        <g>
+          <circle r="40px" fill="#222" stroke="white" stroke-width="7" cx="270" cy="140"/>
+          <circle r="15px" fill="#555" cx="270" cy="140"/>
+        </g>  
+    
+        <g>
+        <!-- Gold light -->
+          <circle r="15px" fill="gold" cx="340" cy="90"/>
+          
+        <!-- Orange light -->
+          <circle r="10px" fill="orange" cx="15" cy="90"/>
+        </g>  
+    </svg>    
+     
+
+    <!-- <img width="1600" height="700" srcset="https://code.highcharts.com/mapdata/countries/in/custom/in-all-disputed.svg, https://code.highcharts.com/mapdata/countries/in/custom/in-all-disputed.svg 2x"
+        src="https://code.highcharts.com/mapdata/countries/in/custom/in-all-disputed.svg" alt="LeadGen Website Screenshot"
+        data-pin-url="https://onepagelove.com/leadgen"
+        data-pin-description="'LeadGen' is a very impressive One Page HTML template that includes a powerful Landing Page builder. There are over 30 pre-made demos covering nearly every industry imaginable. This demo seen here is my favorite - the Product Landing Page. Huge value for money here at only twenty bucks!">
+</img> -->
+
+</body>
+
+</html>
