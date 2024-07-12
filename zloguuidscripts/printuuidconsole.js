@@ -6,7 +6,7 @@
               var jsonString = this._body;
               var jsonObject = JSON.parse(jsonString);
               var uuid = jsonObject.uuid;
-              console.error("uuid=>"+uuid);
+              console.warn("uuid=>"+uuid);
               var domain_id = jsonObject.domain_id;
               console.log("domain_id=>"+domain_id);
               var policy_version = jsonObject.policy_version;
