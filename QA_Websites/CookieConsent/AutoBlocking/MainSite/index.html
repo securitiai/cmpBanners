@@ -2,8 +2,34 @@
 
 <head>
     <h1>auto blocking Combination of case</h1>
-  <!-- Print UUID -->
-  <script src="https://securitiai.github.io/cmpBanners/printuuid.js"> </script>
+
+<!-- ************************** -->
+<style>
+    #logbutton {
+      background-color: blue;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      position: fixed;
+      top: 20px; /* Adjust top position as needed */
+      right: 20px; /* Adjust right position as needed */
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+    <!-- Print UUID to console messages https://securitiai.github.io/cmpBanners -->
+    <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidconsole.js"> </script>
+      <!-- Print UUID to Page -->
+    <button id="logbutton" onclick="displayLogs()">Show Coaptured Consent UUID</button>
+    <ul style="background-color: beige;" id="logList"></ul>
+    <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidpage.js"></script>
+  
+    <!-- ***************** -->
 
     <script type="text/javascript"
         src="https://cdn-qa.securiti.xyz/consent/auto_blocking/b29eb313-51d2-457d-891e-721e1f67b139/b656653b-d97a-45b4-a033-a1bae17a12e5.js"></script>

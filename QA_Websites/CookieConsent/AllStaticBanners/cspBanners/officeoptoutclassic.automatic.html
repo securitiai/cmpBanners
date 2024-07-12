@@ -1,91 +1,59 @@
 <!DOCTYPE html>
-<html lang="en-us" prefix="og: http://ogp.me/ns#">
-<meta http-equiv="Content-Security-Policy"
-  content="img-src 'self' https://code.highcharts.com;    default-src 'self' ; script-src 'self' 'unsafe-inline' https://cdn-qa.securiti.xyz; style-src 'self' 'unsafe-inline' https://cdn-qa.securiti.xyz/consent/cookie-consent-latest.css https://cdn-qa.securiti.xyz/consent/styles/b29eb313-51d2-457d-891e-721e1f67b139/21bf39ff-eeca-4cc5-bc9f-c281b65d0309.css; connect-src 'self' https://cdn-qa.securiti.xyz https://qa.securiti.xyz/core/v1/utils/geo/location https://qa.securiti.xyz/privaci/v1/consent/cookie/singleupload">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
+<html>
 <head>
-  {
-  padding-top: 30px;
-  text-align: center;
-  }
-  <h1 style="color: brown;">Banner Info:</h1>
-  <h2 style="color: aquamarine;">Environment Name: QA</h2>
-  <h2 style="color: aquamarine;">Domain Name: https://www.office.automatic.com </h2>
-  <h2 style="color: aquamarine;">Auto Dep*****nt </h2>
-  <div>CSP + Automatic Deployment + Classic + Opt Out+ Banner Bottom Right (Automatic) m**t- </div>
-  </br>
-  </br>
-  <!-- Inject your securiti body code here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Your Page Title</title>
+    
+    <!-- CSS styles -->
+    <style>
+        #logbutton {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
 
-  <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
-  <script defer data-strict-csp data-skip-css="false"
-    src="https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader-strict-csp.js"
-    data-tenant-uuid="b29eb313-51d2-457d-891e-721e1f67b139" data-domain-uuid="21bf39ff-eeca-4cc5-bc9f-c281b65d0309"
-    data-backend-url="https://qa.securiti.xyz">
-    </script>
+    <!-- External scripts -->
+    <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidconsole.js"></script>
+    <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidpage.js"></script>
 
-  <!-- You may style the button by overriding class "cmp-revoke-consent" -->
-  <button class="cmp-revoke-consent">Revoke Consent</button>
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn-qa.securiti.xyz https://securitiai.github.io/cmpBanners; style-src 'self' 'unsafe-inline' https://cdn-qa.securiti.xyz; connect-src 'self' https://cdn-qa.securiti.xyz https://qa.securiti.xyz/core/v1/utils/geo/location https://qa.securiti.xyz/privaci/v1/consent/cookie/singleupload;">
+
+    <!-- Additional stylesheets -->
+    <link rel="stylesheet" type="text/css" href="https://cdn-qa.securiti.xyz/consent/cookie-consent.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn-qa.securiti.xyz/consent/styles/b29eb313-51d2-457d-891e-721e1f67b139/21bf39ff-eeca-4cc5-bc9f-c281b65d0309.css">
 </head>
-<!-- <script src="https://code.highcharts.com/maps/highmaps.js"></script>
-<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
-
-<div id="container"></div> -->
 
 <body>
+    <!-- Page content -->
+    <h1 style="color: brown;">Banner Info:</h1>
+    <h2 style="color: aquamarine;">Environment Name: QA</h2>
+    <h2 style="color: aquamarine;">Domain Name: https://www.office.automatic.com </h2>
+    <h2 style="color: aquamarine;">Auto Dep*****nt </h2>
+    <div>CSP + Automatic Deployment + Classic + Opt Out+ Banner Bottom Right (Automatic) m**t- </div>
+    <br><br>
 
-  <svg width="365" height="185">
-    <!-- Top -->
-    <rect x="70" y="10" width="220" height="130" fill="transparent" rx="150" stroke="crimson" stroke-width="10" />
+    <!-- Inject your securiti body code here -->
 
-    <!-- Body -->
-    <rect x="10" y="70" width="340" height="80" fill="crimson" rx="30" />
+    <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+    <script defer data-strict-csp data-skip-css="false"
+        src="https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader-strict-csp.js"
+        data-tenant-uuid="b29eb313-51d2-457d-891e-721e1f67b139" data-domain-uuid="21bf39ff-eeca-4cc5-bc9f-c281b65d0309"
+        data-backend-url="https://qa.securiti.xyz">
+    </script>
 
-    <g>
-      <!-- Left line -->
-      <line x1="145" y1="10" x2="145" y2="80" stroke="crimson" stroke-width="10" />
+    <!-- Custom styling for consent banner -->
+    <button class="cmp-revoke-consent">Revoke Consent</button>
 
-      <!-- Right line -->
-      <line x1="215" y1="10" x2="215" y2="80" stroke="crimson" stroke-width="10" />
-    </g>
-
-    <g>
-      <!-- Left bumper -->
-      <rect x="0" y="110" width="40" height="20" fill="#999" rx="10" />
-
-      <!-- Right bumper -->
-      <rect x="325" y="110" width="40" height="20" fill="#999" rx="10" />
-    </g>
-
-    <!-- Left wheel -->
-    <g>
-      <circle r="40px" fill="#222" stroke="white" stroke-width="7" cx="90" cy="140" />
-      <circle r="15px" fill="#555" cx="90" cy="140" />
-    </g>
-
-    <!-- Right wheel -->
-    <g>
-      <circle r="40px" fill="#222" stroke="white" stroke-width="7" cx="270" cy="140" />
-      <circle r="15px" fill="#555" cx="270" cy="140" />
-    </g>
-
-    <g>
-      <!-- Gold light -->
-      <circle r="15px" fill="gold" cx="340" cy="90" />
-
-      <!-- Orange light -->
-      <circle r="10px" fill="orange" cx="15" cy="90" />
-    </g>
-  </svg>
-
-
-  <!-- <img width="1600" height="700" srcset="https://code.highcharts.com/mapdata/countries/in/custom/in-all-disputed.svg, https://code.highcharts.com/mapdata/countries/in/custom/in-all-disputed.svg 2x"
-        src="https://code.highcharts.com/mapdata/countries/in/custom/in-all-disputed.svg" alt="LeadGen Website Screenshot"
-        data-pin-url="https://onepagelove.com/leadgen"
-        data-pin-description="'LeadGen' is a very impressive One Page HTML template that includes a powerful Landing Page builder. There are over 30 pre-made demos covering nearly every industry imaginable. This demo seen here is my favorite - the Product Landing Page. Huge value for money here at only twenty bucks!">
-</img> -->
-
+    <!-- List for logs -->
+    <ul id="logList"></ul>
 </body>
-
 </html>
