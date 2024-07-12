@@ -11,6 +11,7 @@
               console.log("domain_id=>"+domain_id);
               var policy_version = jsonObject.policy_version;
               console.log("policy_version=>"+policy_version);
+              displayLogs();
           }
       }, false);
     
