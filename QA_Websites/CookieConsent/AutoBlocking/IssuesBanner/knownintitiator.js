@@ -1,0 +1,1 @@
+document.cookie = "knwon=dropped by known inititator"
