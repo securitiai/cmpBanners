@@ -49,23 +49,25 @@
 </head>
 
 <body>
-	<h1>IAB Banner | Old domain | Old Snippet</h1>
-<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer. -->
-		<script>
-			(function () {
-			  var s = document.createElement('script');
-			  s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk.js';
-			  s.setAttribute('data-tenant-uuid', 'fed2ba6f-af7e-477b-a90c-f13ce3eddd23');
-			  s.setAttribute('data-domain-uuid', 'e80dfcd0-0d0d-4da4-9b2f-68fee365e7cf');
-			  s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
-			  s.defer = true;
-			  var parent_node = document.head || document.body;
-			  parent_node.appendChild(s);
-			  s.addEventListener('load', function () { window.initCmp(); });
-			})()
-		  </script>
-	<!-- You may style the button by overriding class "cmp-revoke-consent" -->
-	<button class="cmp-revoke-consent">Revoke Consent</button>
+	<h1>IAB Banner | Classic Basic Auto + no vendors selected | QA</h1>
+
+	<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+	<script>
+		(function () {
+			var s = document.createElement('script');
+			s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+			s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
+			s.setAttribute('data-domain-uuid', '950008c6-e8ef-48e3-babc-5e86ef77ff28');
+			s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+			s.setAttribute('data-skip-css', 'false');
+			s.defer = true;
+			var parent_node = document.head || document.body;
+			parent_node.appendChild(s);
+		})()
+	</script>
+
+		<!-- You may style the button by overriding class "cmp-revoke-consent" -->
+		<button class="cmp-revoke-consent">Manage Cookie Preferences</button>
 
 	<!--header section start -->
 	<div class="header_section">
