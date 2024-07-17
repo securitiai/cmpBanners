@@ -3,7 +3,7 @@
 <head>
     <h1>Opt Out + Locatio India/US | Autoblocking | optlocationNautblocking.optOut.html | QA </h1>
 
-
+	<script type="text/javascript" src="https://cdn-qa.securiti.xyz/consent/auto_blocking/b29eb313-51d2-457d-891e-721e1f67b139/8e46112c-2809-451e-85af-9188a98c9baa.js"></script>
 <!-- ************************** -->
 
 	<!-- Print UUID to console messages https://securitiai.github.io/cmpBanners -->
@@ -15,23 +15,25 @@
   
 	<!-- ***************** -->
 	
-    <script type="text/javascript" src="https://cdn-qa.securiti.xyz/consent/auto_blocking/b29eb313-51d2-457d-891e-721e1f67b139/04dafbba-66f9-43b5-a38e-d813af5bfb07.js"></script>
-    <script type="text/javascript" src="https://cdn-qa.securiti.xyz/consent/sdk-stub.js" defer></script>
+    
+
 <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
-<script>
-(function () {
-	var s = document.createElement('script');
-	s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
-	s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
-	s.setAttribute('data-domain-uuid', '04dafbba-66f9-43b5-a38e-d813af5bfb07');
-	s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
-	s.defer = true;
-	var parent_node = document.head || document.body;
-	parent_node.appendChild(s);
-})()
-</script>
+	<script>
+		(function () {
+			var s = document.createElement('script');
+			s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+			s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
+			s.setAttribute('data-domain-uuid', '8e46112c-2809-451e-85af-9188a98c9baa');
+			s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+			s.setAttribute('data-skip-css', 'false');
+			s.defer = true;
+			var parent_node = document.head || document.body;
+			parent_node.appendChild(s);
+		})()
+		</script>
+
 <!-- You may style the button by overriding class "cmp-revoke-consent" -->
-<button class="cmp-revoke-consent">Revoke Consent</button>
+<button class="cmp-revoke-consent">Manage Cookie Preferences</button>
 
 </head>
 
@@ -41,7 +43,6 @@
     <script src="https://securitiai.github.io/cmpBanners/QA_Websites/CookieConsent/AutoBlocking_auto/CookieOneJs/Cookie1.js"></script>
 
     <script src="https://securitiai.github.io/cmpBanners/QA_Websites/CookieConsent/AutoBlocking_auto/CookieTwoJs/Cookie2.js"></script>
-
 
 </body>
 

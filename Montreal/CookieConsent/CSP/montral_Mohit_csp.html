@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Your Page Title</title>
+    
+    <!-- CSS styles -->
+    <style>
+        #logbutton {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+
+    <!-- External scripts -->
+    <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidconsole.js"></script>
+    <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidpage.js"></script>
+    <ul id="logList"></ul>
+	
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn-app3.securiti.ai https://securitiai.github.io/cmpBanners; style-src 'self' 'unsafe-inline' https://cdn-app3.securiti.ai; connect-src 'self' https://cdn-app3.securiti.ai https://qa.securiti.xyz/core/v1/utils/geo/location https://qa.securiti.xyz/privaci/v1/consent/cookie/singleupload;">
+
+    <!-- Additional stylesheets -->
+    <link rel="stylesheet" type="text/css" href="https://cdn-app3.securiti.ai/consent/cookie-consent.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn-app3.securiti.ai/consent/styles/51a3e686-fb5a-4c78-bd45-1a87627c4ce2/54856188-3612-4a0b-ad75-374cd7607b0d.css">
+</head>
+
+<body>
+    <!-- Page content -->
+    <h1>This is for Montreal CSP on test***demo : https://www.o**ce.com</h1>
+    <h1>This banner has absolute old css PATH, and domin is white listed for .js file</h1>
+
+<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+    <script
+	defer
+	data-strict-csp
+	data-skip-css="false"
+	src="https://cdn-app3.securiti.ai/consent/cookie-consent-sdk-loader-strict-csp.js"
+	data-tenant-uuid="f49e5616-0d3b-427e-b238-a314da0963be"
+	data-domain-uuid="93ff70dc-0a5e-4228-a6ae-6e9877f8e2b3"
+	data-backend-url="https://app3.securiti.ai">
+</script>
+
+    <!-- Custom styling for consent banner -->
+    <button class="cmp-revoke-consent">Revoke Consent</button>
+</body>
+</html>
