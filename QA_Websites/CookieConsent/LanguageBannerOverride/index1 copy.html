@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Classic</title>
+	<h1>Location override case </h1>
+</head>
+<body>
+
+<script>
+(function () {
+    var s = document.createElement('script');
+    s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+    s.setAttribute('data-tenant-uuid', '2dff0f1b-7fd3-4bfc-accb-5a008a1c3b69');
+    s.setAttribute('data-domain-uuid', 'b67658d8-c6c4-4611-aa60-764ab9c3e451');
+    s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+    s.setAttribute('data-skip-css', 'false');
+    s.defer = true;
+    var parent_node = document.head || document.body;
+    parent_node.appendChild(s);
+    s.addEventListener('load', function() { 
+                window.initCmp();
+               window.setConsentBannerParams({ 
+               	overrideBannerLocation:{CustomBannerLocation: 'GB'}
+               })
+            });
+})()
+</script>
+</body>
+</html>
