@@ -40,7 +40,7 @@
   <!-- Script to create the current url path -->
   <script>
 
-    const basePath = window.location.origin; // Current page's directory
+    const basePath = window.location.origin + window.location.pathnam; // Current page's directory
     console.log(basePath);
     const relativeUrl = './cspfrench.classic.automatic.html';
     const fullUrl = new URL(relativeUrl, basePath).href;
