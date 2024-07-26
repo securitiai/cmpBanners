@@ -4,13 +4,7 @@
 <head>
 
   <h1 style="color: brown;">Banner Info:</h1>
-  <h1 style="color: green;">This is a index page for the banner language override | QA</h1>
-
-  <a id="cspFrench" href="./cspfrench.classic.automatic.html">CSP French banner will autoblocking and opt out Classic banner</a> <br>
-  <a id="gpc-multi-automatic" href="./multiGcpBanner.html">Multi Banner | GPC | Automatic  </a> <br>
-
-
-
+  <h1 id="bannerDescription" style="color: green;">French Multi | Opt - In | Automatic | QA</h1>
 
   <!-- ************************** -->
   <style>
@@ -40,12 +34,17 @@
   <ul style="background-color: beige;" id="logList"></ul>
   <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidpage.js"></script>
 
+
   <!-- ***************** -->
 
+  <!-- Script to create the current url path -->
+  <script>
+    const fullUrl = window.location.href;
+    console.log(fullUrl);
+  </script>
+
   </br>
   </br>
-
-
 
   <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
   <script>
@@ -53,7 +52,7 @@
       var s = document.createElement('script');
       s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
       s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
-      s.setAttribute('data-domain-uuid', '9bafab4c-faf4-4928-9fdc-7180141e79e3');
+      s.setAttribute('data-domain-uuid', '3fb160f7-2aa1-4182-8f74-dc5ca3496acd');
       s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
       s.setAttribute('data-skip-css', 'false');
       s.defer = true;
@@ -61,7 +60,17 @@
       parent_node.appendChild(s);
     })()
   </script>
-
+  <script>
+    const script = document.querySelector('script[data-domain-uuid]')
+    script.addEventListener('load', () => {
+      // invoke setConsentBannerParams
+      window.setConsentBannerParams({
+        overrideBannerLanguage: {
+          [fullUrl]: 'fr',
+        },
+      })
+    })
+  </script>
   <!-- You may style the button by overriding class "cmp-revoke-consent" -->
   <button class="cmp-revoke-consent">Manage Cookie Preferences</button>
 </head>
