@@ -56,21 +56,18 @@
       s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
       s.setAttribute('data-skip-css', 'false');
       s.defer = true;
+      s.addEventListener('load', function () {
+        window.setConsentBannerParams({
+          overrideBannerLanguage: {
+            [fullUrl]: 'fr',
+          },
+        })
+      });
       var parent_node = document.head || document.body;
       parent_node.appendChild(s);
     })()
   </script>
-  <script>
-    const script = document.querySelector('script[data-domain-uuid]')
-    script.addEventListener('load', () => {
-      // invoke setConsentBannerParams
-      window.setConsentBannerParams({
-        overrideBannerLanguage: {
-          [fullUrl]: 'fr',
-        },
-      })
-    })
-  </script>
+
   <!-- You may style the button by overriding class "cmp-revoke-consent" -->
   <button class="cmp-revoke-consent">Manage Cookie Preferences</button>
 </head>
