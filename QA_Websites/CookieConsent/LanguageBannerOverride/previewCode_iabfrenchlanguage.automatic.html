@@ -4,19 +4,11 @@
 <head>
 
   <h1 style="color: brown;">Banner Info:</h1>
-  <h1 style="color: green;">This is a index page for the banner language override | QA</h1>
-
-  <a id="cspFrench" href="./cspfrench.classic.automatic.html">CSP French banner will autoblocking and opt out Classic banner</a> <br>
-  <a id="gpc-multi-automatic" href="./multiGcpBanner.html">Multi Banner | GPC | Automatic  </a> <br>
-  <a id="iab-classic-automatic" href="./iabfrenchlanguage.automatic.html">Classic | IAB | Automatic  </a> <br>
-  <a id="iabPreviewCode-classic-automatic" href="./previewCode_iabfrenchlanguage.automatic.html">Preview Code | Classic | IAB | Automatic  </a> <br>
-
-
-
+  <h1 id="bannerDescription" style="color: green;">French | Classic | IAB | Opt - In | Automatic | QA</h1>
 
   <!-- ************************** -->
   <style>
-    #logbutton { 
+    #logbutton {
       background-color: blue;
       color: white;
       padding: 10px 20px;
@@ -42,23 +34,38 @@
   <ul style="background-color: beige;" id="logList"></ul>
   <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidpage.js"></script>
 
+
   <!-- ***************** -->
 
+  <!-- Script to create the current url path -->
+  <script>
+    const fullUrl = window.location.href;
+    console.log(fullUrl);
+  </script>
+
   </br>
   </br>
 
-
-
-  <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+<!-- THIS CODE IS FOR TESTING PURPOSE ONLY, DO NOT USE IT IN PRODUCTION. 
+After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
   <script>
     (function () {
       var s = document.createElement('script');
       s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
       s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
-      s.setAttribute('data-domain-uuid', '9bafab4c-faf4-4928-9fdc-7180141e79e3');
+      s.setAttribute('data-domain-uuid', '6469ff90-2e41-40f6-ac30-d8ab92d70802');
       s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+      s.setAttribute('data-securiti-staging-mode', 'true');
       s.setAttribute('data-skip-css', 'false');
       s.defer = true;
+      s.addEventListener('load', function () {
+        window.setConsentBannerParams({
+          overrideBannerLanguage: {
+            [fullUrl+"/1"]: 'pt-br',
+            [fullUrl]: 'fr'
+          },
+        })
+      });
       var parent_node = document.head || document.body;
       parent_node.appendChild(s);
     })()
