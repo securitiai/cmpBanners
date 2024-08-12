@@ -26,11 +26,11 @@
   }
 </style>
   <!-- Print UUID to console messages https://securitiai.github.io/cmpBanners -->
-  <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidconsole.js"> </script>
+  <!-- <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidconsole.js"> </script> -->
     <!-- Print UUID to Page -->
-  <button id="logbutton" onclick="displayLogs()">Show Coaptured Consent UUID</button>
+  <!-- <button id="logbutton" onclick="displayLogs()">Show Coaptured Consent UUID</button>
   <ul style="background-color: beige;" id="logList"></ul>
-  <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidpage.js"></script>
+  <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidpage.js"></script> -->
 
   <!-- ***************** -->
 
@@ -40,20 +40,22 @@
   
 
 <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
-  <script
-	defer
-	data-strict-csp
-	data-skip-css="false"
-	src="https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader-strict-csp.js"
-	data-tenant-uuid="b29eb313-51d2-457d-891e-721e1f67b139"
-	data-domain-uuid="ad9ff680-5e6b-4d89-98ae-175a9052bca9"
-	data-backend-url="https://qa.securiti.xyz">
-</script>
-
-
+  <script>
+    (function () {
+      var s = document.createElement('script');
+      s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+      s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
+      s.setAttribute('data-domain-uuid', 'c2b45847-dc07-4c52-b7be-f9093aa9c1fa');
+      s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+      s.setAttribute('data-skip-css', 'false');
+      s.defer = true;
+      var parent_node = document.head || document.body;
+      parent_node.appendChild(s);
+    })()
+    </script>
 
   <!-- You may style the button by overriding class "cmp-revoke-consent" -->
-  <button class="cmp-revoke-consent">Revoke Consent</button>
+<button class="cmp-revoke-consent">Manage Cookie Preferences</button>
 </head>
 
 <body>
