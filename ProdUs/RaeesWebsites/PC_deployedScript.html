@@ -8,23 +8,21 @@
 </br>
 </br>
 
-<link rel='stylesheet' type='text/css' href='https://cdn-qa.securiti.xyz/consent/cookie-consent.css' />
-
 <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
-<script>
-(function () {
-	var s = document.createElement('script');
-	s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
-	s.setAttribute('data-tenant-uuid', '2dff0f1b-7fd3-4bfc-accb-5a008a1c3b69');
-	s.setAttribute('data-domain-uuid', '3348869a-e5b5-4622-8679-6b376590a521');
-	s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
-	s.setAttribute('data-skip-css', 'false');
-	s.defer = true;
-	var parent_node = document.head || document.body;
-	parent_node.appendChild(s);
-})()
-</script>
-
+    <script>
+        (function () {
+            var s = document.createElement('script');
+            s.src = 'https://cdn-prod.securiti.ai/consent/cookie-consent-sdk-loader.js';
+            s.setAttribute('data-tenant-uuid', '41a22e3a-8e30-4da9-bda6-e152c5208ee5');
+            s.setAttribute('data-domain-uuid', '6eecda58-f542-465d-b726-ccd6bf43fabb');
+            s.setAttribute('data-backend-url', 'https://app.securiti.ai');
+            s.setAttribute('data-skip-css', 'false');
+            s.defer = true;
+            var parent_node = document.head || document.body;
+            parent_node.appendChild(s);
+        })()
+        </script>
+        
     <!-- Inject your securiti revoke button here -->
     <button class="cmp-revoke-consent">Revoke Consent</button>
 </head>
