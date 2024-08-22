@@ -9,14 +9,13 @@
 </br>
 
 <link rel='stylesheet' type='text/css' href='https://cdn-qa.securiti.xyz/consent/cookie-consent.css' />
-
 <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
     <script>
         (function () {
             var s = document.createElement('script');
             s.src = 'https://cdn-app6.securiti.ai/consent/cookie-consent-sdk-loader.js';
             s.setAttribute('data-tenant-uuid', 'c2a02275-009f-4a9d-9119-78fd92e055b5');
-            s.setAttribute('data-domain-uuid', 'e74fd5f8-0e22-48b0-b817-a71d1eb4f431');
+            s.setAttribute('data-domain-uuid', '85b4a364-bc6d-40f1-a964-20ae3fd13f41');
             s.setAttribute('data-backend-url', 'https://app6.securiti.ai');
             s.setAttribute('data-skip-css', 'false');
             s.defer = true;
@@ -24,6 +23,7 @@
             parent_node.appendChild(s);
         })()
         </script>
+        
 
     <!-- Inject your securiti revoke button here -->
     <button class="cmp-revoke-consent">Revoke Consent</button>
