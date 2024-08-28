@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <h1>QA | UUID Ovverride | Autoblocking | Banner Override |</h1>
+  <h1>QA | CSP | UUID | Banner Override |</h1>
 
   <!-- ************************** -->
   <style>
@@ -33,29 +33,25 @@
 
   <!-- ***************** -->
 
-  <script type="text/javascript"
-    src="https://cdn-qa.securiti.xyz/consent/auto_blocking/b29eb313-51d2-457d-891e-721e1f67b139/02be2e93-f1e0-4c32-97ae-cc36d34ac8ea.js"></script>
-
 </head>
 
 <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
-  <script>
-    (function () {
-      var s = document.createElement('script');
-      s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
-      s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
-      s.setAttribute('data-domain-uuid', '02be2e93-f1e0-4c32-97ae-cc36d34ac8ea');
-      s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
-      s.setAttribute('data-skip-css', 'false');
-      s.defer = true;
-           s.addEventListener('load', function() {
-           window.setConsentBannerParams({ uuid:'custom-uuid-'+crypto.randomUUID() })
-        });
-      var parent_node = document.head || document.body;
-      parent_node.appendChild(s);
-        
-    })()
-    </script>
+  <script
+	defer
+	data-strict-csp
+	data-skip-css="false"
+	src="https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader-strict-csp.js"
+	data-tenant-uuid="b29eb313-51d2-457d-891e-721e1f67b139"
+	data-domain-uuid="34dabab6-fe96-4de3-a1ca-ef0ae2e0e042"
+	data-backend-url="https://qa.securiti.xyz">
+</script>
+<script>
+  const script = document.querySelector('script[data-domain-uuid]')
+  script.addEventListener('load', () => {
+    // invoke setConsentBannerParams
+    window.setConsentBannerParams({ uuid: 'custom-csp-'+crypto.randomUUID() })
+  })
+  </script>
 
 
 <!-- You may style the button by overriding class "cmp-revoke-consent" -->
