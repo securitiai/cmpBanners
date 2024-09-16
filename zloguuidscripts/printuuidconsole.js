@@ -2,7 +2,7 @@
     var originalOpen = XMLHttpRequest.prototype.open;
     XMLHttpRequest.prototype.open = function() {
       this.addEventListener('readystatechange', function() {
-        if ((this.readyState  === 3) || (this.readyState  === 4) && this.responseURL.includes('singleupload')){ // Request is done
+        if (this.readyState  > 0 && this.responseURL.includes('singleupload')) { // Request is done
               var jsonString = this._body;
               var jsonObject = JSON.parse(jsonString);
               var uuid = jsonObject.uuid;
