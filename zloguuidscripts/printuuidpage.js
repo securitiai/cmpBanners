@@ -51,7 +51,7 @@ logs = captureConsoleLogs();
 function displayLogs() {
     let logList = document.getElementById('logList');
     logList.innerHTML = ''; // Clear previous logs
-
+    logs = captureConsoleLogs();
     logs.forEach(log => {
         if(log.message.includes('uuid=>')){
         let li = document.createElement('li');
