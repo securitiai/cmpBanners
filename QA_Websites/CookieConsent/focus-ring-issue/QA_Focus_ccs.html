@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>EU Prod Sanity</title>
+</head>
+<body>
+
+
+	<p><a href="https://www.w3.org/">W3C</a></p>
+    <p><a href="https://www.google.com/">Google</a></p>
+    <p><a href="Dell.png">Dell Images</a></p>
+
+
+
+<!-- QA Code After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+<script>
+(function () {
+	var s = document.createElement('script');
+	s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+	s.setAttribute('data-tenant-uuid', '2dff0f1b-7fd3-4bfc-accb-5a008a1c3b69');
+	s.setAttribute('data-domain-uuid', 'a8e0b058-3b0e-4e32-9d26-e4764b4a7dde');
+	s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+	s.setAttribute('data-skip-css', 'false');
+	s.defer = true;
+	var parent_node = document.head || document.body;
+	parent_node.appendChild(s);
+})()
+</script> 
+
+<!-- EU Prod CodeAfter adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer. -->
+<!-- <script>
+(function () {
+	var s = document.createElement('script');
+	s.src = 'https://cdn-prod.eu.securiti.ai/consent/cookie-consent-sdk-loader.js';
+	s.setAttribute('data-tenant-uuid', '4bb9e9d0-16b7-4767-8884-7ef7c04bb91e');
+	s.setAttribute('data-domain-uuid', '4a24e6ba-27c7-478c-b2eb-20ffd8035aff');
+	s.setAttribute('data-backend-url', 'https://app.eu.securiti.ai');
+	s.setAttribute('data-skip-css', 'false');
+	s.defer = true;
+	var parent_node = document.head || document.body;
+	parent_node.appendChild(s);
+})()
+</script>  -->
+
+<button class="cmp-revoke-consent">Manage Cookie Preferences</button>
+   
+
+ 	<script>
+ 		setTimeout(function() {
+ 			const head = document.head
+ 			const ele = head.childNodes[0]
+
+ 			const link = document.createElement('link')
+ 			link.href = './focus.css'
+ 			link.rel = 'stylesheet'
+ 			link.type = 'text/css'
+ 			head.insertBefore(link, ele);
+ 		}, 2000)
+ 	</script>
+
+</body>
+</html>
