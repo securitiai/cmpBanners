@@ -53,7 +53,8 @@ function displayLogs() {
     logList.innerHTML = ''; // Clear previous logs
     // logs = captureConsoleLogs();
     logs.forEach(log => {
-        if(log.message.includes('uuid=>')){
+        let myVar=((typeof log.message==='object') && (log.message !== null))? JSON.stringify(log.message) : log.message;
+        if(myVar.includes('uuid=>')){
         let li = document.createElement('li');
         li.textContent = log.message;
         logList.appendChild(li);
