@@ -1,8 +1,24 @@
 <html>
     <head>
+        <title>Cookie Dropper</title>
 <script>
     document.cookie="_ga_100=100";
     document.cookie="_mohit_100=100";
+    function setCookie(name, value, days) {
+            let date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+
+        // Set cookies when the page loads
+        window.onload = function() {
+            setCookie('_ga_100', '100', 7);  // Expires in 7 days
+            setCookie('_ga', 'val1', 7);  // Expires in 7 days
+            setCookie('_mohit_100', 'abc123xyz', 1);  // Expires in 1 day
+            setCookie('theme', 'dark', 30);  // Expires in 30 days
+            console.log("Cookies set successfully");
+        };
 </script>
     </head>
     <body>
