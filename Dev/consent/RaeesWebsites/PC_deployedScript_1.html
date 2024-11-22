@@ -9,18 +9,18 @@
 </br>
 <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
     <script>
-        (function () {
-            var s = document.createElement('script');
-            s.src = 'https://cdn-prod.securiti.ai/consent/cookie-consent-sdk-loader.js';
-            s.setAttribute('data-tenant-uuid', '41a22e3a-8e30-4da9-bda6-e152c5208ee5');
-            s.setAttribute('data-domain-uuid', 'd6f493b0-8474-47d0-ac0e-00570d45be32');
-            s.setAttribute('data-backend-url', 'https://app.securiti.ai');
-            s.setAttribute('data-skip-css', 'false');
-            s.defer = true;
-            var parent_node = document.head || document.body;
-            parent_node.appendChild(s);
-        })()
-        </script>
+		(function () {
+			var s = document.createElement('script');
+			s.src = 'https://cdn-dev.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+			s.setAttribute('data-tenant-uuid', '1e956c75-019b-4aa4-ad82-de3d495de9d4');
+			s.setAttribute('data-domain-uuid', '85873de6-3a6a-4c08-aec6-69bbfd2e95e5');
+			s.setAttribute('data-backend-url', 'https://dev.securiti.xyz');
+			s.setAttribute('data-skip-css', 'false');
+			s.defer = true;
+			var parent_node = document.head || document.body;
+			parent_node.appendChild(s);
+		})()
+	</script>
     <!-- Inject your securiti revoke button here -->
     <button class="cmp-revoke-consent">Revoke Consent</button>
 </head>
