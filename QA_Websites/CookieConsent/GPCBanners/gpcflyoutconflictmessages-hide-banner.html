@@ -4,7 +4,8 @@
 <head>
   
   <h1 style="color: brown;">Banner Info:</h1>
-  <h1 style="color: green;"> GPC Exception handelling messages | Banner Hidden | QA</h1>
+  <h1 style="color: green;"> Test | GPC Exception handelling messages | Opt _in | Banner Hidden | QA</h1>
+  <h1 style="color: green;"> https://gpcflyoutconflictmessages.hide.com</h1>
 
 <!-- ************************** -->
 <style>
@@ -42,6 +43,20 @@
 
 <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
   
+<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+<script>
+  (function () {
+    var s = document.createElement('script');
+    s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+    s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
+    s.setAttribute('data-domain-uuid', '5039cea1-b9f8-4b8b-a8ad-9c98ef1482bd');
+    s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+    s.setAttribute('data-skip-css', 'false');
+    s.defer = true;
+    var parent_node = document.head || document.body;
+    parent_node.appendChild(s);
+  })()
+  </script>
 <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
 
   <!-- You may style the button by overriding class "cmp-revoke-consent" -->
