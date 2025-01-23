@@ -35,19 +35,21 @@
    <!-- body -->
    <body class="main-layout">
       <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer. -->
-<script>
-(function () {
-	var s = document.createElement('script');
-	s.src = 'https://cdn-prod.securiti.ai/consent/cookie-consent-sdk.js';
-	s.setAttribute('data-tenant-uuid', 'ac4f868a-906a-4e90-ba18-11f63ac8ed3d');
-	s.setAttribute('data-domain-uuid', 'c6b8c839-412f-44dc-b86d-805d6771a021');
-	s.setAttribute('data-backend-url', 'https://app.securiti.ai');
-	s.defer = true;
-	var parent_node = document.head || document.body;
-	parent_node.appendChild(s);
-	s.addEventListener('load', function() { window.initCmp(); });
-})()
-</script>
+
+<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+   <script>
+      (function () {
+         var s = document.createElement('script');
+         s.src = 'https://cdn-prod.securiti.ai/consent/cookie-consent-sdk-loader.js';
+         s.setAttribute('data-tenant-uuid', '09f99b07-9b72-4dd3-b6b5-1009a96c2fd4');
+         s.setAttribute('data-domain-uuid', '58e0464f-fe52-4729-9102-cfbc5100915f');
+         s.setAttribute('data-backend-url', 'https://app.securiti.ai');
+         s.setAttribute('data-skip-css', 'false');
+         s.defer = true;
+         var parent_node = document.head || document.body;
+         parent_node.appendChild(s);
+      })()
+      </script>
 
 <!-- You may style the button by overriding class "cmp-revoke-consent" -->
 <button class="cmp-revoke-consent">Revoke Consent</button>
@@ -106,7 +108,7 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">
-                     <h2>This Test is to cpature consent on for </br></br></br><span class="red">domain> http://sec***i.*i/</span> </h2>
+                     <h2>Prod Demo | This Test is to cpature consent on for </br></br></br><span class="red">domain> http://sec***i.*i/</span> </h2>
                      <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
                   </div>
                </div>
