@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-us" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <h1 style="color: brown;">Banner Info: To test DSK has all functions and varioles in JS</h1>
+
+    </br>
+    </br>
+
+    <img srcset="https://onepagelove.imgix.net/2017/01/opl-big-19.jpg?auto=compress, https://onepagelove.imgix.net/2017/01/opl-big-19.jpg?auto=compress 2x"
+        src="https://onepagelove.imgix.net/2017/01/opl-big-19.jpg?auto=compress" alt="LeadGen Website Screenshot"
+        data-pin-url="https://onepagelove.com/leadgen"
+        data-pin-description="'LeadGen' is a very impressive One Page HTML template that includes a powerful Landing Page builder. There are over 30 pre-made demos covering nearly every industry imaginable. This demo seen here is my favorite - the Product Landing Page. Huge value for money here at only twenty bucks!">
+
+        <link rel='stylesheet' type='text/css' href='https://cdn-prod.securiti.ai/consent/cookie-consent.css' />
+</head>
+
+<body>
+    <!-- Inject your securiti body code here -->
+   <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+<script>
+    (function () {
+        var s = document.createElement('script');
+        s.src = 'https://cdn-prod.securiti.ai/consent/cookie-consent-sdk.js';
+        s.setAttribute('data-tenant-uuid', 'ac4f868a-906a-4e90-ba18-11f63ac8ed3d');
+        s.setAttribute('data-domain-uuid', '6023eca1-feeb-4263-bbaa-2400a74ca451');
+        s.setAttribute('data-backend-url', 'https://app.securiti.ai');
+        s.defer = true;
+        var parent_node = document.head || document.body;
+        parent_node.appendChild(s);
+        s.addEventListener('load', function() { window.initCmp(); });
+     
+    })()
+    </script>
+    <!-- Inject your securiti revoke button here -->
+    <!-- You may style the button by overriding class "cmp-revoke-consent" -->
+    <button class="cmp-revoke-consent">Revoke Consent</button>
+</body>
+
+</html>

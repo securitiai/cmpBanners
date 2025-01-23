@@ -1,0 +1,30 @@
+
+<!-- hide dismiss button and decline button in text formate. -->
+
+<html>
+<head>
+	<h2>Offline Sc***er Raes</h2>
+<
+<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+<script>
+(function () {
+	var s = document.createElement('script');
+	s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+	s.setAttribute('data-tenant-uuid', 'dc4a0024-415b-4109-946a-a65a1d25edc1');
+	s.setAttribute('data-domain-uuid', 'e7aa9751-c147-4e14-a62d-994926aee1c1');
+	s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+	s.setAttribute('data-skip-css', 'false');
+	s.defer = true;
+	var parent_node = document.head || document.body;
+	parent_node.appendChild(s);
+})()
+</script>
+
+<!-- You may style the button by overriding class "cmp-revoke-consent" -->
+<button class="cmp-revoke-consent">Revoke Consent</button>
+
+</body>
+</html>
+
+
+
