@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn-prod.securiti.ai; style-src 'self' https://cdn-prod.securiti.ai/consent/cookie-consent.css https://cdn-prod.securiti.ai/consent/styles/09f99b07-9b72-4dd3-b6b5-1009a96c2fd4/7a9c633c-fee1-44d4-8d52-d882fc111a3a.css; connect-src 'self' https://cdn-prod.securiti.ai https://app.securiti.ai/core/v1/utils/geo/location https://app.securiti.ai/privaci/v1/consent/cookie/singleupload">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Your Page Title</title>
+    
+    <!-- CSS styles -->
+    <!-- <style>
+        #logbutton {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
 
-<link rel='stylesheet' type='text/css' href='https://cdn-prod.securiti.ai/consent/cookie-consent.css' />
-<link rel='stylesheet' type='text/css' href='https://cdn-prod.securiti.ai/consent/styles/09f99b07-9b72-4dd3-b6b5-1009a96c2fd4/7a9c633c-fee1-44d4-8d52-d882fc111a3a.css' />
+    External scripts
+    <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidconsole.js"></script>
+    <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidpage.js"></script>
+    <ul id="logList"></ul> -->
+	
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn-prod.securiti.ai https://securitiai.github.io/cmpBanners; style-src 'self' 'unsafe-inline' https://cdn-prod.securiti.ai; connect-src 'self' https://cdn-prod.securiti.ai https://app.securiti.ai/core/v1/utils/geo/location https://app.securiti.ai/privaci/v1/consent/cookie/singleupload;">
+
+    <!-- Additional stylesheets -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn-qa.securiti.xyz/consent/cookie-consent.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn-qa.securiti.xyz/consent/styles/09f99b07-9b72-4dd3-b6b5-1009a96c2fd4/7a9c633c-fee1-44d4-8d52-d882fc111a3a.css"> -->
+</head>
+
 <body>
+    <!-- Page content -->
+    <h1>This is for Prod master CSP on test***demo : https://www.of**ce.com</h1>
+    <h1>This banner has absolute old css PATH, and domin is white listed for .js file</h1>
 
-	<h1>This is for Prod Demo</h1>
 
 <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
-	<script
+    <script
 	defer
 	data-strict-csp
 	data-skip-css="false"
@@ -18,9 +49,7 @@
 	data-domain-uuid="7a9c633c-fee1-44d4-8d52-d882fc111a3a"
 	data-backend-url="https://app.securiti.ai">
 </script>
-
-<!-- You may style the button by overriding class "cmp-revoke-consent" -->
-<button class="cmp-revoke-consent">Revoke Consent</button>
-
+    <!-- Custom styling for consent banner -->
+    <button class="cmp-revoke-consent">Revoke Consent</button>
 </body>
 </html>
