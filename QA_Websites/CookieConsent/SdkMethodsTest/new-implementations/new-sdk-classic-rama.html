@@ -1,0 +1,420 @@
+<html lang="en" class="h-100">
+
+<head>
+  <link href="https://cdn-qa.securiti.xyz/consent/cookie-consent-latest.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Curio.COM">
+  <meta name="author" content="Ramanarayana Narmala">
+  <meta name="generator" content="Ramanarayana">
+  <title>Test Page - Cookie Consent (Local)</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <meta name="theme-color" content="#563d7c">
+
+  <style>
+    .footer {
+      background-color: #f5f5f5;
+    }
+
+    .modal.fade {
+      z-index: 10000000 !important;
+    }
+
+    .log {
+      min-height: 400px;
+      max-height: 550px;
+    }
+
+    .code-block {
+      overflow-y: auto;
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+      background-color: #f2f2f2;
+      border: 1px solid #dadada;
+      border-left: 2px solid #4CAF50;
+      padding: 10px 5px;
+      font-family: Consolas, monospace;
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+  </style>
+  <script>
+    function el(id) {
+      return document.getElementById(id);
+    }
+    function getHourTime() {
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+      const milliseconds = now.getMilliseconds().toString().padStart(3, '0');
+
+      return `${hours}:${minutes}:${seconds}.${milliseconds}`;
+    }
+
+    function scrollDown(id) {
+      var element = el(id);
+      element.scrollTop = element.scrollHeight;
+      //element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    function appendHtml(id, html) {
+      let d = el(id);
+      d.innerHTML += html;
+    }
+    function replaceHtml(id, html) {
+      el(id).innerHTML = html;
+    }
+    function appendAndScrollDown(id, html) {
+      appendHtml(id, '[' + getHourTime() + '] ' + html);
+      scrollDown(id);
+    }
+    function clearContent(id) {
+      el(id).innerHTML = '';
+    }
+    function showPrefCenter() {
+      SecuritiSDK.onReady(sdk => {
+        sdk.showPreferenceCenter();
+        replaceHtml('consent-action', 'PreferenceCenter shown.');
+      });
+    }
+    function showBanner() {
+      SecuritiSDK.onReady(sdk => {
+        sdk.showBanner();
+        replaceHtml('consent-action', 'Banner shown.');
+      });
+    }
+    function closeBanner() {
+      SecuritiSDK.onReady(sdk => {
+        sdk.closeBanner();
+        replaceHtml('consent-action', 'Banner closed.');
+      });
+    }
+    function getConsent() {
+      SecuritiSDK.onReady(sdk => {
+        let consent = sdk.getConsent();
+        replaceHtml('consent-action', JSON.stringify(consent, null, 2));
+      });
+    }
+    function isConsentGiven() {
+      SecuritiSDK.onReady(sdk => {
+        let consent = sdk.isConsentGiven();
+        replaceHtml('consent-action', 'Consent given: ' + consent);
+      });
+    }
+    function getCategories() {
+      SecuritiSDK.onReady(sdk => {
+        let categories = sdk.getCategories();
+        replaceHtml('consent-action', JSON.stringify(categories, null, 2));
+      });
+    }
+    function setCookie(name, value, days) {
+      var expires = "";
+      if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+    function getCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+    function eraseCookie(name) {
+      document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    }
+    function removeConsent() {
+      eraseCookie('__privaci_cookie_consent_generated');
+      eraseCookie('__privaci_cookie_consent_uuid');
+      eraseCookie('__privaci_cookie_consents');
+      eraseCookie('__privaci_latest_published_version');
+      eraseCookie('__privaci_cookie_no_action');
+
+      window.location.reload();
+    }
+  </script>
+<!-- 
+  <script src="https://cdn-dev-intg-2.securiti.xyz/consent/cookie-consent-sdk-loader.js"
+    data-tenant-uuid="5e2dcf33-6eae-427a-afa4-c7667ee32a11" data-domain-uuid="1184acd1-6f9b-4662-aa7b-45fe3ac0004f"
+    data-backend-url="https://dev-intg-2.securiti.xyz" data-skip-css="false" defer="">
+  </script>
+
+   -->
+
+  <style class="cmp-pref-styles"></style>
+</head>
+
+<body class="d-flex flex-column h-100">
+  <main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="container-fluid">
+      <div class="container-fluid">
+        <h1 class="display-5" style="font-weight: bold;">Cookie ConsentSDK Playground</h1>
+        <p>Play with cookie consent sdk here</p>
+      </div>
+      <hr>
+    </div>
+
+    <div class="container-fluid">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Event Log</h3>
+          <div id="consent-event-log" class="code-block log">[19:07:36.937] beforeLoad executed.
+            [19:07:38.500] onConfigLoad executed.
+            [19:07:38.512] onLoad executed.
+          </div>
+          <p class=""><button class="btn btn-link btn-sm" role="button"
+              onclick="clearContent('consent-event-log');">Clear</button></p>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-9">
+              <button type="button" class="btn btn-primary" onclick="showPrefCenter();">Show Preference
+                Center</button>
+              <button type="button" class="btn btn-dark" onclick="showBanner();">Show Banner</button>
+              <button type="button" class="btn btn-secondary" onclick="closeBanner();">Close
+                Banner</button>
+            </div>
+            <div class="col-3 text-right">
+              <button type="button" class="btn btn-outline-danger" onclick="removeConsent();">Clear
+                CONSENT</button>
+            </div>
+          </div>
+          <hr>
+          <div style="margin-bottom: 1px;">
+            <button type="button" class="btn btn-success" onclick="getConsent();">GetConsent</button>
+            <button type="button" class="btn btn-warning" onclick="isConsentGiven();">isConsentGiven</button>
+            <button type="button" class="btn btn-info" onclick="getCategories();">getCategories</button>
+          </div>
+          <div id="consent-action" class="code-block" style="min-height: 335px; max-height: 500px;">{
+            "category": {
+            "Advertising": "not_available",
+            "Analytics &amp; Customization": "not_available",
+            "Essential": "not_available",
+            "Performance &amp; Functionality": "not_available",
+            "Social Networking": "not_available"
+            }
+            }</div>
+          <p class=""><button class="btn btn-link btn-sm" role="button"
+              onclick="clearContent('consent-action');">Clear</button></p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer mt-auto py-3">
+    <div class="container">
+      <span class="text-muted" id="footerText" style="z-index: 10000000 !important;position: sticky;">Test Footer
+        of the page for Playground</span>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer. -->
+
+
+  <script>
+    window.SecuritiDataLayer = window.SecuritiDataLayer || [];
+
+    window.SecuritiDataLayer.push(['beforeLoad', function (bareSdk) {
+      if (!bareSdk.isConsentGiven()) {
+        console.log('Consent was not given previously');
+      }
+      bareSdk.setUuid('55555-4444-333-22-1');
+      bareSdk.setLanguage('en');
+      bareSdk.setLocation('US');
+
+      console.log('[SecuritiSDK] beforeLoad done');
+      appendAndScrollDown('consent-event-log', 'beforeLoad executed.\n');
+    }]);
+
+    window.SecuritiDataLayer.push(['onConfigLoad', function (bareSdk) {
+      console.log('[SecuritiSDK] onConfigLoad done');
+      appendAndScrollDown('consent-event-log', 'onConfigLoad executed.\n');
+    }]);
+
+    window.SecuritiDataLayer.push(['onLoad', function (sdk) {
+      console.log('[SecuritiSDK] onLoad done');
+      appendAndScrollDown('consent-event-log', 'onLoad executed.\n');
+    }]);
+
+    window.SecuritiDataLayer.push(['onConsentGiven', function (sdk, consent) {
+      console.log('[SecuritiSDK] onConsentGiven done', consent);
+      appendAndScrollDown('consent-event-log', 'onConsentGiven executed.\n' + JSON.stringify(consent, null, 2) + '\n');
+    }]);
+
+    window.SecuritiDataLayer.push(['beforeRenderBanner', function (sdk) {
+      console.log('[SecuritiSDK] beforeRenderBanner done');
+      appendAndScrollDown('consent-event-log', 'beforeRenderBanner executed.\n');
+      $('#footerText').css('z-index', '10');
+    }]);
+
+    window.SecuritiDataLayer.push(['afterRenderBanner', function (sdk) {
+      console.log('[SecuritiSDK] afterRenderBanner done');
+      appendAndScrollDown('consent-event-log', 'afterRenderBanner executed.\n');
+    }]);
+
+    window.SecuritiDataLayer.push(['onClickPreferencesLink', function (sdk) {
+      console.log('[SecuritiSDK] onClickPreferencesLink done');
+      appendAndScrollDown('consent-event-log', 'onClickPreferencesLink executed.\n');
+    }]);
+
+    window.SecuritiDataLayer.push(['onCloseBanner', function (sdk) {
+      console.log('[SecuritiSDK] onCloseBanner done');
+      appendAndScrollDown('consent-event-log', 'onCloseBanner executed.\n');
+    }]);
+
+    window.SecuritiDataLayer.push(['onClickAccept', function (sdk) {
+      console.log('[SecuritiSDK] onClickAccept done');
+      appendAndScrollDown('consent-event-log', 'onClickAccept executed.\n');
+    }]);
+
+    window.SecuritiDataLayer.push(['onClickDismiss', function (sdk) {
+      console.log('[SecuritiSDK] onClickDismiss done');
+      appendAndScrollDown('consent-event-log', 'onClickDismiss executed.\n');
+    }]);
+
+    window.SecuritiDataLayer.push(['onImplicitConsent', function (sdk) {
+      console.log('[SecuritiSDK] onImplicitConsent done');
+      appendAndScrollDown('consent-event-log', 'onImplicitConsent executed.\n');
+    }]);
+
+    window.SecuritiDataLayer.push(['beforeRenderPrefCenter', function (sdk) {
+      console.log('[SecuritiSDK] beforeRenderPrefCenter done');
+      appendAndScrollDown('consent-event-log', 'beforeRenderPrefCenter executed.\n');
+    }]);
+
+    window.SecuritiDataLayer.push(['afterRenderPrefCenter', function (sdk) {
+      console.log('[SecuritiSDK] afterRenderPrefCenter done');
+      appendAndScrollDown('consent-event-log', 'afterRenderPrefCenter executed.\n');
+    }]);
+
+    window.SecuritiDataLayer.push(['onClickSavePreferences', function (sdk) {
+      console.log('[SecuritiSDK] onClickSavePreferences done');
+      appendAndScrollDown('consent-event-log', 'onClickSavePreferences executed.\n');
+    }]);
+
+    window.SecuritiDataLayer.push(['onCategoryToggled', function (sdk, categoryName, toggleState) {
+      console.log('[SecuritiSDK] onCategoryToggled done', categoryName, toggleState);
+      appendAndScrollDown('consent-event-log', 'onCategoryToggled executed.\n' + categoryName + ': ' + toggleState + '\n');
+      if (categoryName === 'Advertising' && toggleState === true) {
+        $('#exampleModal').modal({
+          backdrop: 'static',
+          keyboard: false,
+          show: true,
+          focus: false
+        });
+      }
+    }]);
+
+    window.SecuritiDataLayer.push(['onGpcCategoryConflict', function (sdk, categoryName, toggleState) {
+      console.log('[SecuritiSDK] onGpcCategoryConflict done', categoryName, toggleState);
+      appendAndScrollDown('consent-event-log', 'onGpcCategoryConflict executed.\n' + categoryName + ': ' + toggleState + '\n');
+    }]);
+
+    window.SecuritiDataLayer.push(['onCategoryChange', function (sdk, categoryName, oldState, newState) {
+      console.log('[SecuritiSDK] onCategoryChange done', categoryName, oldState, newState);
+      appendAndScrollDown('consent-event-log', 'onCategoryChange executed.\n' + categoryName + ': ' + oldState + ' -> ' + newState + '\n');
+    }]);
+
+    window.SecuritiDataLayer.push(['onCategoryConsented', function (sdk, categoryName) {
+      console.log('[SecuritiSDK] onCategoryConsented done', categoryName);
+      appendAndScrollDown('consent-event-log', 'onCategoryConsented executed. ' + categoryName + '\n');
+    }]);
+
+    window.SecuritiDataLayer.push(['onCategoryDeclined', function (sdk, categoryName) {
+      console.log('[SecuritiSDK] onCategoryDeclined done', categoryName);
+      appendAndScrollDown('consent-event-log', 'onCategoryDeclined executed. ' + categoryName + '\n');
+    }]);
+
+    window.SecuritiDataLayer.push(['onClosePrefCenter', function (sdk) {
+      console.log('[SecuritiSDK] onClosePrefCenter done');
+      appendAndScrollDown('consent-event-log', 'onClosePrefCenter executed.\n');
+    }]);
+
+    window.SecuritiDataLayer.push(['onGpcDetected', function (sdk) {
+      console.log('[SecuritiSDK] onGpcDetected done');
+      appendAndScrollDown('consent-event-log', 'onGpcDetected executed.\n');
+    }]);
+
+    window.SecuritiDataLayer.push(['onGCMConsentGiven', function (sdk, gcmConsent) {
+      console.log('[SecuritiSDK] onGCMConsentGiven done', gcmConsent);
+      appendAndScrollDown('consent-event-log', 'onGCMConsentGiven executed.\n' + JSON.stringify(gcmConsent, null, 2) + '\n');
+    }]);
+
+  </script>
+
+  <div class="modal fade" id="exampleModal" data-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Advertising</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Enabling Advertising cookies allows third parties to collect and process your browsing data to
+          deliver tailored ads.
+          This may include sharing data with external advertising networks. Please note that these cookies can
+          track your activity
+          across multiple websites and platforms. You can learn more about how your data is used in our
+          <a href="#">Privacy Policy</a>.
+        </div>
+        <div class=" modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">I Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+  <script>
+    (function () {
+      var s = document.createElement('script');
+      s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+      s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
+      s.setAttribute('data-domain-uuid', 'b7477c9c-77f8-452d-a522-32c8e8fa3fae');
+      s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+      s.setAttribute('data-skip-css', 'false');
+      s.defer = true;
+      var parent_node = document.head || document.body;
+      parent_node.appendChild(s);
+    })()
+    </script>
+  
+
+  <script type="text/javascript" src="https://suvera.github.io/blocked_script_01.js"></script>
+  <script type="text/javascript" src="https://suvera.github.io/blocked_script_02.js"></script>
+  <script type="text/javascript" src="https://suvera.github.io/unblocked_script_50.js"></script>
+
+</body>
+
+</html>
