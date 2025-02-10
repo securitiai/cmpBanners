@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Your Page Title</title>
+
+    <!-- CSS styles -->
+    <!-- <style>
+        #logbutton {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+
+    External scripts
+    <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidconsole.js"></script>
+    <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidpage.js"></script>
+    <ul id="logList"></ul> -->
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn-qa.securiti.xyz https://securitiai.github.io/cmpBanners; style-src 'self' 'unsafe-inline' https://cdn-qa.securiti.xyz; connect-src 'self' https://cdn-qa.securiti.xyz https://qa.securiti.xyz/core/v1/utils/geo/location https://qa.securiti.xyz/privaci/v1/consent/cookie/singleupload;">
+
+    <!-- Additional stylesheets -->
+    <link rel="stylesheet" type="text/css" href="https://cdn-qa.securiti.xyz/consent/cookie-consent.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn-qa.securiti.xyz/consent/styles/51a3e686-fb5a-4c78-bd45-1a87627c4ce2/54856188-3612-4a0b-ad75-374cd7607b0d.css">
+</head>
+
+<body>
+    <!-- Page content -->
+    <h1>This is for QA CSP on test***demo : https://csp.classic.callback.com </h1>
+    <h1>CUstom call back and focus | QA | Multi Level</h1>
+
+
+    <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+    <script defer data-strict-csp data-skip-css="false"
+        src="https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader-strict-csp.js"
+        data-tenant-uuid="b29eb313-51d2-457d-891e-721e1f67b139" data-domain-uuid="10c075bd-05db-4974-8c66-e17512295586"
+        data-backend-url="https://qa.securiti.xyz">
+        </script>
+    <script>
+        var securitiSdkRef = document.querySelector("script[data-domain-uuid]")
+        securitiSdkRef.addEventListener('load', function () {
+            window.registerSrtiCookieSDKEvents('onPrefCenterClose', function () {
+                console.log('Preference center modal was closed');
+            })
+        })
+    </script>
+    <style>
+        button:focus {
+            background-color: #00ff77;
+            border-color: #00ff77;
+            color: white;
+            transition: all 0.3s ease;
+        }
+    </style>
+    <button id="one" style="position: fixed; top: 20px; left: 20px; z-index: 1000;"
+        onclick="showConsentPreferencesPopup()">Custom Button</button>
+
+    </br>
+    </br>
+    <button id="two" style="position: fixed; top: 100px; left: 200=0px; z-index: 1000;"
+        onclick="showConsentPreferencesPopup()">2nd Custom Button</button>
+
+</body>
+
+</html>
