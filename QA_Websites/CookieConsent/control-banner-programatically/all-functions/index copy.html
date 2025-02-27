@@ -312,14 +312,6 @@
                     focus: false
                 });
             }
-            if (categoryName === 'Performance & Functionality' && toggleState === false) {
-                $('#exampleModal').modal({
-                    backdrop: 'static',
-                    keyboard: false,
-                    show: true,
-                    focus: false
-                });
-            }
         }]);
 
         window.SecuritiDataLayer.push(['onGpcCategoryConflict', function (sdk, categoryName, toggleState) {
