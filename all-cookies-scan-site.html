@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Browser Cookies - QA Environment</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #06402B;
+            color: #e0e0e0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #0a5438;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .cookie-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #083c2a;
+            border: 1px solid #0d6344;
+        }
+        .cookie-type {
+            color: #ffffff;
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #0b4935;
+            border-radius: 6px;
+            border: 1px solid #0d6344;
+        }
+        .cookie-info {
+            margin-bottom: 20px;
+        }
+        .cookie-status {
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #0d6344;
+            border-radius: 5px;
+            color: #ffffff;
+        }
+        #cookieStatus {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #0d6344;
+            border-radius: 5px;
+            display: none;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        /* Slider Styles */
+        .slider-container {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            margin: 0 auto 30px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            border: 1px solid #0d6344;
+        }
+
+        .slider {
+            display: flex;
+            width: 400%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            width: 25%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(6, 64, 43, 0.9);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .slider-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .slider-nav-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            border: none;
+        }
+
+        .slider-nav-btn.active {
+            background: white;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(6, 64, 43, 0.8);
+            color: white;
+            padding: 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 50%;
+            font-size: 18px;
+            z-index: 1;
+        }
+
+        .slider-arrow.prev {
+            left: 20px;
+        }
+
+        .slider-arrow.next {
+            right: 20px;
+        }
+
+        .environment-notice {
+            background-color: #0d6344;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #0f7350;
+            font-weight: 500;
+        }
+
+        .environment-notice span {
+            font-weight: bold;
+            color: #4ade80;
+        }
+
+        strong {
+            color: #4ade80;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li:before {
+            content: "🍪";
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="environment-notice">
+            🔍 This site is designed for cookie scanning in <span>QA Environment</span>. It demonstrates various types of cookies for testing purposes.
+        </div>
+        
+        <h1>Understanding Browser Cookies</h1>
+
+        <!-- Cookie Image Slider -->
+        <div class="slider-container">
+            <button class="slider-arrow prev" onclick="changeSlide(-1)">❮</button>
+            <button class="slider-arrow next" onclick="changeSlide(1)">❯</button>
+            <div class="slider">
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35" alt="Chocolate Chip Cookies">
+                    <div class="slide-caption">Classic Chocolate Chip Cookies</div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1590080874088-eec64895b423" alt="Oatmeal Cookies">
+                    <div class="slide-caption">Healthy Oatmeal Cookies</div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1597733153203-a54d0fbc47de" alt="Sugar Cookies">
+                    <div class="slide-caption">Decorated Sugar Cookies</div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1599599810769-bcde5a160d32" alt="Assorted Cookies">
+                    <div class="slide-caption">Assorted Cookie Collection</div>
+                </div>
+            </div>
+            <div class="slider-nav">
+                <button class="slider-nav-btn active" onclick="goToSlide(0)"></button>
+                <button class="slider-nav-btn" onclick="goToSlide(1)"></button>
+                <button class="slider-nav-btn" onclick="goToSlide(2)"></button>
+                <button class="slider-nav-btn" onclick="goToSlide(3)"></button>
+            </div>
+        </div>
+        
+        <div class="cookie-section">
+            <h2>Why Are Cookies Important?</h2>
+            <p>Cookies are small text files stored on your computer by websites you visit. They serve several crucial purposes:</p>
+            <ul>
+                <li><strong>Session Management:</strong> Keep you logged in and maintain your preferences</li>
+                <li><strong>Personalization:</strong> Remember your preferences and customize content</li>
+                <li><strong>Tracking:</strong> Analyze website usage and improve user experience</li>
+                <li><strong>Shopping:</strong> Remember items in your shopping cart</li>
+            </ul>
+        </div>
+
+        <div class="cookie-section">
+            <h2>Types of Cookies on This Site</h2>
+            <div id="cookieStatus">Cookies have been set successfully!</div>
+            
+            <div class="cookie-type">
+                <h3>Essential Cookies</h3>
+                <p>Required for basic website functionality</p>
+            </div>
+
+            <div class="cookie-type">
+                <h3>Performance & Functionality Cookies</h3>
+                <p>Help improve website performance and enable specific functionality</p>
+            </div>
+
+            <div class="cookie-type">
+                <h3>Advertising Cookies</h3>
+                <p>Used to deliver relevant advertisements and track ad performance</p>
+            </div>
+
+            <div class="cookie-type">
+                <h3>Social Networking Cookies</h3>
+                <p>Enable social sharing and tracking features</p>
+            </div>
+
+            <div class="cookie-type">
+                <h3>Unclassified Cookies</h3>
+                <p>Cookies that are in the process of being classified</p>
+            </div>
+        <div class="cookie-type">
+            <h3>Analytics & Customization Cookies</h3>
+            <p>Used to gather data on website usage and customize user experience</p>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        // Cookie Setting Functions
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+
+        // Set Essential Cookies
+        setCookie("essential_cookie1", "necessary_value1", 30);
+        setCookie("essential_cookie2", "necessary_value2", 30);
+
+        // Set Performance Cookies
+        setCookie("performance_cookie1", "perf_value1", 30);
+        setCookie("performance_cookie2", "perf_value2", 30);
+
+        // Set Advertising Cookies
+        setCookie("advertising_cookie1", "ad_value1", 30);
+        setCookie("advertising_cookie2", "ad_value2", 30);
+
+        // Set Social Networking Cookies
+        setCookie("social_cookie1", "social_value1", 30);
+        setCookie("social_cookie2", "social_value2", 30);
+        // Set Analytics & Customization Cookies
+        setCookie("_gat_gtag_UA_116131938_1", "analytics_customization_value1", 30);
+        setCookie("analytics_customization_cookie2", "analytics_customization_value2", 30);
+
+        // Set Unclassified Cookies
+        setCookie("unclassified_cookie1", "unclass_value1", 30);
+        setCookie("unclassified_cookie2", "unclass_value2", 30);
+
+        // Show success message
+        window.onload = function() {
+            const statusElement = document.getElementById('cookieStatus');
+            statusElement.style.display = 'block';
+        };
+
+        // Slider functionality
+        let currentSlide = 0;
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slide');
+        const navButtons = document.querySelectorAll('.slider-nav-btn');
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 25}%)`;
+            navButtons.forEach((btn, index) => {
+                btn.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function changeSlide(direction) {
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            updateSlider();
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateSlider();
+        }
+
+        // Auto-advance slides
+        setInterval(() => changeSlide(1), 5000);
+    </script>
+</body>
+</html>
