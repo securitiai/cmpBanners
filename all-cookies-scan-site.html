@@ -185,6 +185,24 @@
             left: 0;
             top: 2px;
         }
+
+        .cookie-info ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        .cookie-info li {
+            margin-bottom: 8px;
+            font-size: 0.95em;
+            padding-left: 0;
+        }
+        .cookie-info li:before {
+            content: none;
+        }
+        .cookie-info strong {
+            color: #4ade80;
+            display: block;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -242,7 +260,22 @@
             
             <div class="cookie-type">
                 <h3>Essential Cookies</h3>
-                <p>Required for basic website functionality</p>
+                <p>Required for basic website functionality and security</p>
+                <div class="cookie-info">
+                    <strong>Active cookies:</strong>
+                    <ul>
+                        <li>__cf_bm: Cloudflare Bot Management</li>
+                        <li>JSESSIONID: Java Session Tracking</li>
+                        <li>wordpress_test_cookie: WordPress Functionality Check</li>
+                        <li>datadome: Bot Protection</li>
+                        <li>AWSALBCORS: AWS Load Balancer CORS Support</li>
+                        <li>AWSALB: AWS Load Balancer</li>
+                        <li>dd_testcookie: DataDome Security Check</li>
+                        <li>remote_sid: Remote Session ID</li>
+                        <li>__Secure-*: Secure Connection Cookies</li>
+                        <li>TESTCOOKIESENABLED: Cookie Support Check</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="cookie-type">
@@ -281,28 +314,84 @@
         }
 
         // Set Essential Cookies
-        setCookie("essential_cookie1", "necessary_value1", 30);
-        setCookie("essential_cookie2", "necessary_value2", 30);
+        setCookie("__cf_bm", "CloudFlare Bot Management", 30);
+        setCookie("JSESSIONID", "session_identifier", 30);
+        setCookie("wordpress_test_cookie", "WP_Cookie_Check", 30);
+        setCookie("datadome", "security_check", 30);
+        setCookie("AWSALBCORS", "load_balancer_cors", 30);
+        setCookie("AWSALB", "load_balancer", 30);
+        setCookie("dd_testcookie", "datadome_test", 30);
+        setCookie("remote_sid", "remote_session", 30);
+        setCookie("__Secure-*", "secure_cookie_wildcard", 30);
+        setCookie("TESTCOOKIESENABLED", "1", 30);
 
         // Set Performance Cookies
-        setCookie("performance_cookie1", "perf_value1", 30);
-        setCookie("performance_cookie2", "perf_value2", 30);
+        setCookie("nextId", "next_page_id", 30);
+        setCookie("wpEmojiSettingsSupports", "emoji_support", 30);
+        setCookie("va_sidenav_open", "navigation_state", 30);
+        setCookie("requests", "api_requests", 30);
+        setCookie("__/support/*", "support_wildcard", 30);
+        setCookie("LAST_RESULT_ENTRY_KEY", "last_result", 30);
 
-        // Set Advertising Cookies
-        setCookie("advertising_cookie1", "ad_value1", 30);
-        setCookie("advertising_cookie2", "ad_value2", 30);
+        // Set Analytics Cookies
+        setCookie("_ga", "analytics_id", 365);
+        setCookie("_gid", "analytics_session", 1);
+        setCookie("_gat", "analytics_throttle", 1);
+        setCookie("_ga_*", "analytics_wildcard", 365);
+        setCookie("_g2_session_id", "session_analytics", 30);
+        setCookie("amplitude_session", "user_session", 30);
+        setCookie("events_distinct_id", "event_tracking", 30);
 
         // Set Social Networking Cookies
-        setCookie("social_cookie1", "social_value1", 30);
-        setCookie("social_cookie2", "social_value2", 30);
-        // Set Analytics & Customization Cookies
-        setCookie("_gat_gtag_UA_116131938_1", "analytics_customization_value1", 30);
-        setCookie("analytics_customization_cookie2", "analytics_customization_value2", 30);
+        setCookie("1t0pn7_hmDevice", "device_type", 30);
+        setCookie("1t0pn7_fontSize", "font_preference", 30);
+        setCookie("NID", "google_preference", 180);
+        setCookie("VISITOR_INFO1_LIVE", "youtube_settings", 180);
+        setCookie("VISITOR_PRIVACY_METADATA", "privacy_settings", 180);
+        setCookie("YSC", "youtube_session", 30);
+
+        // Set Privacy & Consent Cookies
+        setCookie("__privaci_cookie_consents", "consent_choices", 365);
+        setCookie("__privaci_cookie_consent_generated", "consent_timestamp", 365);
+        setCookie("__privaci_cookie_consent_uuid", "consent_identifier", 365);
+        setCookie("__privaci_latest_published_version", "consent_version", 365);
 
         // Set Unclassified Cookies
-        setCookie("unclassified_cookie1", "unclass_value1", 30);
-        setCookie("unclassified_cookie2", "unclass_value2", 30);
+        setCookie("mlw_quiz_start_date1", "unclass_value3", 30);
+        setCookie("_hjSession_3128566", "unclass_value4", 30);
+        setCookie("_ga_LZ0GC3ZK5Q", "unclass_value5", 30);
+        setCookie("handl_js_domain", "unclass_value6", 30);
+        setCookie("uw-uid", "unclass_value1", 30);
+        setCookie("uw-tunings-checksum", "unclass_value2", 30);
+  // Set Essential Cookies
+        setCookie("__cf_bm", "necessary_value1", 30);
+        setCookie("__cf_bm", "necessary_value2", 30);
 
+        // Set Performance Cookies
+        setCookie("uw-icon-locales", "perf_value1", 30);
+        setCookie("nextId", "perf_value2", 30);
+
+        // Set Advertising Cookies
+        setCookie("IDE", "ad_value1", 30);
+        setCookie("test_cookie", "ad_value2", 30);
+
+        // Set Social Networking Cookies
+        setCookie("CM*", "social_value1", 30);
+        setCookie("aum", "social_value2", 30);
+        setCookie("auid", "social_value3", 30);
+        setCookie("auid", "social_value4", 30);
+        setCookie("fr", "social_value5", 30);
+        // Set Analytics & Customization Cookies
+        setCookie("_gat_gtag_UA_116131938_1", "analytics_customization_value1", 30);
+        setCookie("__gads", "analytics_customization_value2", 30);
+
+        // Set Unclassified Cookies
+        setCookie("mlw_quiz_start_date1", "unclass_value3", 30);
+        setCookie("_hjSession_3128566", "unclass_value4", 30);
+        setCookie("_ga_LZ0GC3ZK5Q", "unclass_value5", 30);
+        setCookie("handl_js_domain", "unclass_value6", 30);
+        setCookie("uw-uid", "unclass_value1", 30);
+        setCookie("uw-tunings-checksum", "unclass_value2", 30);
         // Show success message
         window.onload = function() {
             const statusElement = document.getElementById('cookieStatus');
