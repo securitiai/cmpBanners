@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cosmic Canvas</title>
-    <link href="./bootstrap.min.css" rel="stylesheet"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./default.min.css">
-    <script src="./11.11.1/highlight.min.js"></script>
+    <script src="./highlight.min.js"></script>
     <script src="./javascript.min.js"></script>
     <style>
         body {
@@ -286,20 +286,20 @@
 
 
 
-    <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
     <script>
-    (function () {
-    	var s = document.createElement('script');
-    	s.src = 'https://cdn-dev-intg-2.securiti.xyz/consent/cookie-consent-sdk-loader.js';
-    	s.setAttribute('data-tenant-uuid', '5e2dcf33-6eae-427a-afa4-c7667ee32a11');
-    	s.setAttribute('data-domain-uuid', '1184acd1-6f9b-4662-aa7b-45fe3ac0004f');
-    	s.setAttribute('data-backend-url', 'https://dev-intg-2.securiti.xyz');
-    	s.setAttribute('data-skip-css', 'false');
-    	s.defer = true;
-    	var parent_node = document.head || document.body;
-    	parent_node.appendChild(s);
-    })()
-    </script>
+        (function () {
+            var s = document.createElement('script');
+            s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+            s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
+            s.setAttribute('data-domain-uuid', 'a9d89ab4-0612-435e-b429-a9254129fa76');
+            s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+            s.setAttribute('data-skip-css', 'false');
+            s.defer = true;
+            var parent_node = document.head || document.body;
+            parent_node.appendChild(s);
+        })()
+        </script>
 </body>
 
 </html>
