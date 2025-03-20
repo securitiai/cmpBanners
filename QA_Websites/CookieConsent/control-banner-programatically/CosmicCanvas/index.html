@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Canvas</title>
+    <link href="./bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./default.min.css">
+    <script src="./11.11.1/highlight.min.js"></script>
+    <script src="./javascript.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 20px;
+        }
+
+        .overlayed {
+            opacity: 0.2;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px 0;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #eef1f5;
+            border-top: 1ps solid #a7acb0;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .table-responsive {
+            margin-bottom: 20px;
+        }
+
+        .bg-gradient-1 {
+            background: linear-gradient(to bottom right, #1a2a6c, #b21f1f, #fdbb2d);
+        }
+
+        .bg-gradient-2 {
+            background: linear-gradient(to bottom left, #283cbb, #8e0e00);
+        }
+
+        .bg-gradient-3 {
+            background: linear-gradient(to top, #141e30, #243b55);
+        }
+
+        .bg-gradient-4 {
+            background: linear-gradient(to bottom, #000428, #004e92);
+        }
+
+        .card-title,
+        .card-text {
+            color: white;
+            text-shadow: 1px 1px 2px #000000;
+        }
+
+        .navbar {
+            background: linear-gradient(to right, #2980b9, #8e44ad);
+            /* Colorful gradient background */
+            padding: 10px 20px;
+            /* Add some padding */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            /* Add a shadow */
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: white !important;
+            /* Ensure text is visible */
+        }
+
+        .nav-link {
+            margin: 0 10px;
+            /* Add spacing between nav items */
+            display: flex;
+            align-items: center;
+            /* Vertically center icon and text */
+        }
+
+        .nav-link i {
+            margin-right: 5px;
+            /* Add spacing between icon and text */
+        }
+    </style>
+    <script>
+        window.SecuritiDataLayer = window.SecuritiDataLayer || [];
+
+        window.SecuritiDataLayer.push(['beforeLoad', function (bareSdk) {
+            if (bareSdk.isConsentGiven()) {
+                console.log('Consent already given');
+                return;
+            }
+            console.log('Consent not given', bareSdk.isConsentGiven());
+            const content = document.getElementById('page_content_div');
+            content.classList.add('overlayed');
+            document.body.style.overflow = 'hidden';
+        }]);
+
+        window.SecuritiDataLayer.push(['onConsentGiven', function (sdk, consent) {
+            console.log('[SecuritiSDK] Consent Given', consent);
+            const content = document.getElementById('page_content_div');
+            content.classList.remove('overlayed');
+            document.body.style.overflow = 'auto';
+        }]);
+
+    </script>
+</head>
+
+<body>
+    <div id="page_content_div">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><i class="bi bi-rocket"></i> Cosmic Canvas</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="bi bi-house"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="bi bi-info-circle"></i> About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="bi bi-envelope"></i> Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="bi bi-stars"></i> Astronomy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="bi bi-robot"></i> AI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="bi bi-book"></i> Fiction</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="bi bi-atom"></i> Science</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="bi bi-image"></i> Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="bi bi-newspaper"></i> News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="bi bi-question-circle"></i> FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="bi bi-gear"></i> Settings</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card bg-gradient-1">
+                        <div class="card-body">
+                            <h5 class="card-title">The Andromeda Galaxy <i class="bi bi-stars"></i></h5>
+                            <p class="card-text">Our cosmic neighbor, Andromeda, is a spiral galaxy approximately 2.5
+                                million light-years from Earth. It's the closest major galaxy to the Milky Way and is
+                                destined to collide with our own galaxy in about 4.5 billion years. This galactic merger
+                                will reshape both galaxies.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card bg-gradient-2">
+                        <div class="card-body">
+                            <h5 class="card-title">Artificial Intelligence <i class="bi bi-cpu"></i></h5>
+                            <p class="card-text">AI is rapidly transforming our world, from self-driving cars to medical
+                                diagnoses. The future of AI holds immense potential, but also raises important ethical
+                                considerations. Ensuring responsible development and deployment of AI is crucial.</p>
+                            <a href="#" class="btn btn-primary">Explore AI</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-gradient-3">
+                <div class="card-body">
+                    <h5 class="card-title">The Martian Chronicles (Fiction) <i class="bi bi-book"></i></h5>
+                    <p class="card-text">Ray Bradbury's "The Martian Chronicles" explores the colonization of Mars by
+                        humans
+                        and the conflicts that arise between the colonists and the native Martians. The stories blend
+                        science fiction with social commentary.</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+
+            <div class="card bg-gradient-4">
+                <div class="card-body">
+                    <h5 class="card-title">Black Holes <i class="bi bi-eye"></i></h5>
+                    <p class="card-text">Black holes are regions of spacetime where gravity is so strong that nothing,
+                        not
+                        even light, can escape. They are formed from the remnants of massive stars and play a crucial
+                        role
+                        in the evolution of galaxies.</p>
+                    <a href="#" class="btn btn-primary">Discover Black Holes</a>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Galaxy</th>
+                            <th>Distance (Light-years)</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Milky Way</td>
+                            <td>0</td>
+                            <td>Spiral</td>
+                        </tr>
+                        <tr>
+                            <td>Andromeda</td>
+                            <td>2.5 million</td>
+                            <td>Spiral</td>
+                        </tr>
+                        <tr>
+                            <td>Triangulum</td>
+                            <td>3 million</td>
+                            <td>Spiral</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+
+        <footer class="mt-auto">
+            <div class="container">
+                <p>&copy; 2023 Cosmic Canvas</p>
+            </div>
+        </footer>
+        <h5>Example Code:</h5>
+        <div class="">
+            <pre><code class="language-javascript">
+                // Place this code right before loading Securiti's Consent banner code.
+                window.SecuritiDataLayer = window.SecuritiDataLayer || [];
+    
+                window.SecuritiDataLayer.push(['beforeLoad', function (bareSdk) {
+                    if (bareSdk.isConsentGiven()) {
+                        return;
+                    }
+                    const content = document.getElementById('page_content_div');
+                    content.classList.add('overlayed');
+                    document.body.style.overflow = 'hidden';
+                }]);
+        
+                window.SecuritiDataLayer.push(['onConsentGiven', function (sdk, consent) {
+                    const content = document.getElementById('page_content_div');
+                    content.classList.remove('overlayed');
+                    document.body.style.overflow = 'auto';
+                }]);
+            </code></pre>
+        </div>
+        <script>hljs.highlightAll();</script>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+
+
+    <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+    <script>
+    (function () {
+    	var s = document.createElement('script');
+    	s.src = 'https://cdn-dev-intg-2.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+    	s.setAttribute('data-tenant-uuid', '5e2dcf33-6eae-427a-afa4-c7667ee32a11');
+    	s.setAttribute('data-domain-uuid', '1184acd1-6f9b-4662-aa7b-45fe3ac0004f');
+    	s.setAttribute('data-backend-url', 'https://dev-intg-2.securiti.xyz');
+    	s.setAttribute('data-skip-css', 'false');
+    	s.defer = true;
+    	var parent_node = document.head || document.body;
+    	parent_node.appendChild(s);
+    })()
+    </script>
+</body>
+
+</html>
