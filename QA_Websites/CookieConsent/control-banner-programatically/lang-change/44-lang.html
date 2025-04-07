@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexipedia Example</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/javascript.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f8f9fa;
+            /* Very light gray */
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #28a745;
+            /* Green header */
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: white !important;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            color: #0056b3;
+            /* Wikipedia blue */
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+
+        .bg-featured {
+            background-color: #e6f7ff;
+            border-left: 5px solid #007bff;
+        }
+
+        .lead {
+            color: #555;
+        }
+
+        .display-5 {
+            color: #343a40;
+        }
+
+        .dropdown-item {
+            padding-left: 27px;
+        }
+
+        .dropdown-item-checked::before {
+            position: absolute;
+            left: .4rem;
+            content: '✓';
+            font-weight: 600;
+        }
+    </style>
+    <script>
+        let selectedLang = null;
+
+        function changeLangauge(a, lang) {
+            if (selectedLang) {
+                selectedLang.classList.remove("dropdown-item-checked");
+            }
+            selectedLang = a;
+            a.classList.remove("dropdown-item-checked");
+            a.classList.add("dropdown-item-checked");
+            document.getElementById("navbarDropdown").innerText = 'Language ( ' + a.innerText + ' )';
+            SecuritiSDK.onReady(sdk => {
+                sdk.changeLanguage(lang);
+            });
+        }
+
+        function showPrefCenter() {
+            SecuritiSDK.onReady(sdk => {
+                sdk.showPreferenceCenter();
+            });
+        }
+
+        function showBanner() {
+            SecuritiSDK.onReady(sdk => {
+                sdk.showBanner();
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">Lexipedia</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Explore</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false"
+                            style="font-weight: bold !important; text-decoration: underline;">
+                            Language
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#" onclick="changeLangauge(this, 'en');">English</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeLangauge(this, 'es');">Spanish</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="changeLangauge(this, 'fr');">French</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeLangauge(this, 'te');">Telugu</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeLangauge(this, 'hi');">Hindi</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeLangauge(this, 'pa');">Punjabi</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPrefCenter();"><small>Cookie Preferences</small></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showBanner();"><small>Cookie Banner</small></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-4">
+        <div class="mb-4 bg-light rounded-3">
+            <div class="container-fluid py-3">
+                <h1 class="display-5 fw-bold">Welcome to Lexipedia</h1>
+                <p class="fs-4">The Free Encyclopedia</p>
+                <button class="btn btn-primary btn-lg" type="button">Learn more</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">What is Lexipedia?</h5>
+                        <p class="card-text">Lexipedia is a free online encyclopedia, created and edited by volunteers
+                            around the world.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">How to Contribute</h5>
+                        <p class="card-text">Anyone can edit Lexipedia. Learn how you can contribute and make a
+                            difference.</p>
+                        <a href="#" class="btn btn-primary">Contribute</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Lexipedia Foundation</h5>
+                        <p class="card-text">Lexipedia is supported by the Lexipedia Foundation, a non-profit
+                            organization.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="bg-featured p-4 rounded">
+            <h2>Featured Article</h2>
+            <p><i class="bi bi-star-fill text-warning"></i> This section could feature a highlighted article from
+                Lexipedia. Use strong typography here. </p>
+            <p class="lead">"Leading text with <code>.lead</code>. Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                Cras mattis consectetur purus sit amet fermentum."</p>
+            <blockquote class="blockquote">
+                <p>A well-known quote, contained in a blockquote element.</p>
+                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite>
+                </footer>
+            </blockquote>
+        </div>
+
+        <h5>Example Code:</h5>
+        <div class="">
+            <pre><code class="language-javascript">
+                // Place this code any where, and call this method on Menu item/button Click.
+                function changeLangauge(a, lang) {
+                    SecuritiSDK.onReady(sdk => {
+                        sdk.changeLanguage(lang);
+                    });
+                }
+            </code></pre>
+        </div>
+        <script>hljs.highlightAll();</script>
+
+    </main>
+
+    <footer class="footer mt-auto py-3 bg-light text-center">
+        <div class="container">
+            <span class="text-muted">&copy; 2023 Lexipedia Example. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    !-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer. -->
+        <script>
+            (function () {
+                var s = document.createElement('script');
+                s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+                s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
+                s.setAttribute('data-domain-uuid', '6b26f66f-3103-49c6-a056-b38d022172d7');
+                s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+                s.setAttribute('data-skip-css', 'false');
+                s.defer = true;
+                var parent_node = document.head || document.body;
+                parent_node.appendChild(s);
+            })()
+        </script>
+
+</body>
+
+</html>
