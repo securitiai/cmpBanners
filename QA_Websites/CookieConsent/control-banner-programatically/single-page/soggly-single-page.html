@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="icon" href="https://suvera.xyz/react-consent-app1/favicon.ico">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="The Soggy Shovel Landscaping Co.">
+  <link rel="apple-touch-icon" href="https://suvera.xyz/react-consent-app1/logo192.png">
+  <link rel="manifest" href="https://suvera.xyz/react-consent-app1/manifest.json">
+  <title>The Soggy Shovel Landscaping Co.</title>
+  <script defer="defer" src="./soggy-files/main.1bc282d9.js"></script>
+  <link href="./soggy-files/main.415b78d9.css" rel="stylesheet">
+  data-tenant-uuid="5e2dcf33-6eae-427a-afa4-c7667ee32a11" data-domain-uuid="657dd244-5150-4ee5-9d29-f797715aeada"
+  data-backend-url="https://dev-intg-2.securiti.xyz" data-skip-css="false" defer=""></script>
+  <style class="cmp-pref-styles"></style>
+</head>
+
+<body><noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root">
+    <div class="app-container">
+      <header>
+        <h1>The Soggy Shovel Landscaping Co.</h1>
+        <nav><button>Home</button><button>About Us</button><button>Services</button><button>Contact Us</button></nav>
+      </header>
+      <main>
+        <section class="page-content">
+          <h2>Welcome to The Soggy Shovel!</h2>
+          <p> We're not afraid of a little mud! We're your friendly neighborhood landscaping experts, dedicated to
+            making your outdoor spaces beautiful and functional. At The Soggy Shovel, we believe that your outdoor space
+            should be an extension of your home—a place where you can relax, entertain, and connect with nature. That's
+            why we're passionate about creating landscapes that are not only beautiful but also sustainable and easy to
+            maintain.</p>
+          <p>From lush green lawns and vibrant flower beds to elegant patios and inviting walkways, we offer a full
+            range of landscaping services to transform your outdoor vision into reality. Whether you're looking to
+            create a peaceful retreat, a lively entertainment area, or a functional family space, our team of
+            experienced landscapers is here to help.</p>
+          <pre class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">handleNavigation</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">page</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+
+  <span class="token comment">// Add this code on your Navigation Handler</span>
+  window<span class="token punctuation">.</span>SecuritiSDK <span class="token operator">&amp;&amp;</span> window<span class="token punctuation">.</span>SecuritiSDK<span class="token punctuation">.</span><span class="token function">onReady</span><span class="token punctuation">(</span><span class="token parameter">sdk</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>sdk<span class="token punctuation">.</span><span class="token function">isConsentGiven</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      sdk<span class="token punctuation">.</span><span class="token function">closeBanner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Your code &amp; logic here</span>
+  <span class="token comment">// setActivePage(page);</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></pre>
+        </section>
+      </main>
+      <footer>
+        <p>© 2023 The Soggy Shovel Landscaping Co.</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+  <script>
+    (function () {
+      var s = document.createElement('script');
+      s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+      s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
+      s.setAttribute('data-domain-uuid', 'a8563c04-bc76-49e7-8f38-863f67c4aaa1');
+      s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+      s.setAttribute('data-skip-css', 'false');
+      s.defer = true;
+      var parent_node = document.head || document.body;
+      parent_node.appendChild(s);
+    })()
+  </script>
+
+</body>
+
+</html>
