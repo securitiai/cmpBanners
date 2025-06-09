@@ -1,2 +1,2 @@
-console.assert(false,"Cookie3 and Unpublished and this cookie should not drop");
-document.cookie = "Cookie3=Unpublished"
+console.assert(false,"Cookie3 was unblocked and cookie name=Cookie3 and value=Unpublished was dropped");
+document.cookie = "Cookie3=Cookie Three"
