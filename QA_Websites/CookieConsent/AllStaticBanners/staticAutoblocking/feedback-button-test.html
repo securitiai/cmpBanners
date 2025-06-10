@@ -2,25 +2,22 @@
 <html lang="en">
 
 <head>
-    <script type="text/javascript"
-    <script type="text/javascript" src="https://cdn-prod.securiti.ai/consent/auto_blocking/ac4f868a-906a-4e90-ba18-11f63ac8ed3d/239827d6-2736-41a4-b040-f639f3ef2924.js"></script>
+    <script type="text/javascript" src="https://cdn-qa.securiti.xyz/consent/auto_blocking/b29eb313-51d2-457d-891e-721e1f67b139/4ca57e84-d4f8-43fa-86a5-fb23f44dfd0a.js"></script>
+
 
 
 <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
-    <script>
-        (function () {
-            var s = document.createElement('script');
-            s.src = 'https://cdn-prod.securiti.ai/consent/cookie-consent-sdk-loader.js';
-            s.setAttribute('data-tenant-uuid', 'ac4f868a-906a-4e90-ba18-11f63ac8ed3d');
-            s.setAttribute('data-domain-uuid', '239827d6-2736-41a4-b040-f639f3ef2924');
-            s.setAttribute('data-backend-url', 'https://app.securiti.ai');
-            s.setAttribute('data-skip-css', 'false');
-            s.defer = true;
-            var parent_node = document.head || document.body;
-            parent_node.appendChild(s);
-        })()
-        </script>
-        
+    <script
+	defer
+	data-strict-csp
+	data-skip-css="false"
+	src="https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader-strict-csp.js"
+	data-tenant-uuid="b29eb313-51d2-457d-891e-721e1f67b139"
+	data-domain-uuid="4ca57e84-d4f8-43fa-86a5-fb23f44dfd0a"
+	data-backend-url="https://qa.securiti.xyz">
+</script>
+
+
     <script>
         var g = document.createElement('script');
         g.src = 'https://www.google.com';
