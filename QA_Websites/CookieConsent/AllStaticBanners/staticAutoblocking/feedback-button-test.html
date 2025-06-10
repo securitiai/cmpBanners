@@ -3,22 +3,24 @@
 
 <head>
     <script type="text/javascript"
-        src="https://cdn-qa.securiti.xyz/consent/auto_blocking/b29eb313-51d2-457d-891e-721e1f67b139/04dafbba-66f9-43b5-a38e-d813af5bfb07.js"></script>
+    <script type="text/javascript" src="https://cdn-prod.securiti.ai/consent/auto_blocking/ac4f868a-906a-4e90-ba18-11f63ac8ed3d/239827d6-2736-41a4-b040-f639f3ef2924.js"></script>
 
-    <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+
+<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
     <script>
         (function () {
             var s = document.createElement('script');
-            s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
-            s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
-            s.setAttribute('data-domain-uuid', '04dafbba-66f9-43b5-a38e-d813af5bfb07');
-            s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+            s.src = 'https://cdn-prod.securiti.ai/consent/cookie-consent-sdk-loader.js';
+            s.setAttribute('data-tenant-uuid', 'ac4f868a-906a-4e90-ba18-11f63ac8ed3d');
+            s.setAttribute('data-domain-uuid', '239827d6-2736-41a4-b040-f639f3ef2924');
+            s.setAttribute('data-backend-url', 'https://app.securiti.ai');
             s.setAttribute('data-skip-css', 'false');
             s.defer = true;
             var parent_node = document.head || document.body;
             parent_node.appendChild(s);
         })()
-    </script>
+        </script>
+        
     <script>
         var g = document.createElement('script');
         g.src = 'https://www.google.com';
@@ -61,37 +63,38 @@
 
         .feedback-button {
             position: fixed;
-            right: 20px;
+            right: 0px;
             top: 50%;
             transform: translateY(-50%);
-            background: linear-gradient(135deg, #4285f4 0%, #1e3a8a 100%);
-            color: white;
-            padding: 20px 12px;
-            border: 2px solid #4285f4;
+            background-color: white;
+            color: #4285f4;
+            padding: 25px 8px;
+            border: 1px solid #e0e0e0;
+            border-right: none;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: 500;
             text-decoration: none;
             z-index: 1000;
-            font-size: 13px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            letter-spacing: 0.5px;
-            border-radius: 25px;
-            box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+            font-size: 12px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            letter-spacing: 1px;
+            border-radius: 20px 0 0 20px;
+            box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
             writing-mode: vertical-rl;
             text-orientation: upright;
-            width: 24px;
-            height: 120px;
+            width: 32px;
+            height: 140px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
         
         .feedback-button:hover {
-            background: linear-gradient(135deg, #5a95f5 0%, #2563eb 100%);
-            box-shadow: 0 6px 16px rgba(66, 133, 244, 0.4);
-            transform: translateY(-50%) scale(1.05);
-            color: white;
+            background-color: #f8f9fa;
+            color: #1976d2;
+            box-shadow: -3px 0 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-50%) translateX(-2px);
             text-decoration: none;
         }
 
