@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <h1>https://autoblocking.regex.com | </h1>
+    <!-- ************************** -->
+
+    <!-- Print UUID to console messages https://securitiai.github.io/cmpBanners -->
+    <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidconsole.js"> </script>
+    <!-- Print UUID to Page -->
+    <button id="logbutton" onclick="displayLogs()">Show Coaptured Consent UUID</button>
+    <ul style="background-color: beige;" id="logList"></ul>
+    <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidpage.js"></script>
+
+    <script type="text/javascript"
+        src="https://cdn-qa.securiti.xyz/consent/auto_blocking/b29eb313-51d2-457d-891e-721e1f67b139/307eb1ca-dcb1-490c-8d89-05a46cf96536.js"></script>
+
+</head>
+
+<body>
+    <script>
+        Array.prototype.test = function () { }
+    </script>
+
+
+
+    <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+    <script>
+            (function () {
+                var s = document.createElement('script');
+                s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+                s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
+                s.setAttribute('data-domain-uuid', '307eb1ca-dcb1-490c-8d89-05a46cf96536');
+                s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+                s.setAttribute('data-skip-css', 'false');
+                s.defer = true;
+                var parent_node = document.head || document.body;
+                parent_node.appendChild(s);
+            })()
+    </script>
+
+
+
+
+    <!-- You may style the button by overriding class "cmp-revoke-consent" -->
+    <button class="cmp-revoke-consent">Revoke Consent</button>
+
+    <!-- Free test image -->
+    <img src="https://picsum.photos/300/200" alt="Random test image" style="margin: 20px 0; border: 1px solid #ccc; border-radius: 8px;">
+    <img src="cookie-food.jpg" alt="Random test image" style="margin: 20px 0; border: 1px solid #ccc; border-radius: 8px;">
+
+    <script src="Cookie1.js" type="text/javascript"></script>
+    <script src="Cookie2.js" type="text/javascript"></script>
+    <script src="cookie3.js" type="text/javascript"></script>
+
+</body>
+
+</html>
