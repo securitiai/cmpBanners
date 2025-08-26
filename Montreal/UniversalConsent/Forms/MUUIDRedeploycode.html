@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<title>Multiple UUID Form</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 </head>
+
 <body>
 
 
@@ -44,21 +46,21 @@
 					</label>
 				</div>
 
-				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+				<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
 					<input class="input100" id="email" type="text" name="email" placeholder="Email">
 					<label class="label-input100" for="email">
 						<span class="lnr lnr-envelope"></span>
 					</label>
 				</div>
 
-				<div class="wrap-input100 validate-input" data-validate = "Phone is required">
+				<div class="wrap-input100 validate-input" data-validate="Phone is required">
 					<input class="input100" id="phone" type="text" name="phone" placeholder="Phone">
 					<label class="label-input100" for="phone">
 						<span class="lnr lnr-phone-handset"></span>
 					</label>
 				</div>
 
-				<div class="wrap-input100 validate-input" data-validate = "Message is required">
+				<div class="wrap-input100 validate-input" data-validate="Message is required">
 					<textarea class="input100" name="message" placeholder="Your message..."></textarea>
 				</div>
 
@@ -89,38 +91,37 @@
 
 	<div id="dropDownSelect1"></div>
 
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/bootstrap/js/popper.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/daterangepicker/moment.min.js"></script>
 	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="js/main.js"></script>
-<!-- FORM CODE FOR EU TEnant is  -->
+	<!-- FORM CODE FOR EU TEnant is  -->
 
-<script src='https://cdn-app3.securiti.ai/consent/form-consent-sdk.js'></script>
-<script>
-window.addEventListener('load',
-    FormConsentSDK.initialize({
-        codeGenMetadata:{"formPropertyId":"5","formSelector":"[class*=\"contact100-form validate-form\"]","subjectIdentifiers":[{"name":"Name","selector":"[name = \"name\"]","isPrimary":true},{"name":"Email","selector":"[name = \"email\"]","isPrimary":true},{"name":"Phone","selector":"[name = \"phone\"]","isPrimary":false}],"consentIdentifiers":[{"type":"checkbox","name":"copy-mail","selector":"[name = \"copy-mail\"]","propertyId":4503,"consentValue":"checked"},{"type":"checkbox","name":"Tech-mail","selector":"[name = \"Tech-mail\"]","propertyId":4504,"consentValue":"checked"}],"consentTrigger":{"action":"click","selector":"[class = \"contact100-form-btn\"]"}},
-        url: 'https://app3.securiti.ai/privaci/v1/',
-        authToken:'eba53bca-0e3e-4775-97cc-19b753527908',
-        orgId:'1',
-        onConsentSuccess: null,
-        onConsentFailure: null
-    })
-)</script>
+	<script src='https://cdn-app3.securiti.ai/consent/form-consent-sdk.js'></script>
+	<script>window.addEventListener('load', function () {
+			FormConsentSDK.initialize({
+				codeGenMetadata: { "formPropertyId": "72", "formSelector": "[class*=\"contact100-form validate-form\"]", "subjectIdentifiers": [{ "name": "name", "selector": "[name = \"name\"]", "isPrimary": false }, { "name": "email", "selector": "[name = \"email\"]", "isPrimary": true }, { "name": "phone", "selector": "[name = \"phone\"]", "isPrimary": false }], "consentIdentifiers": [{ "type": "checkbox", "name": "sharemydata", "selector": "[name = \"sharemydata\"]", "propertyId": 22823, "consentValue": "checked" }, { "type": "checkbox", "name": "vlog", "selector": "[name = \"vlog\"]", "propertyId": 22824, "consentValue": "checked" }, { "type": "checkbox", "name": "cdn", "selector": "[name = \"cdn\"]", "propertyId": 22825, "consentValue": "checked" }], "consentTrigger": { "action": "click", "selector": "[class = \"contact100-form-btn\"]" } },
+				url: 'https://app3.securiti.ai/privaci/v1/',
+				authToken: 'eba53bca-0e3e-4775-97cc-19b753527908',
+				orgId: '1',
+				onConsentSuccess: null,
+				onConsentFailure: null
+			})
+		})</script>
 
 
-    
-    </body>
+</body>
+
 </html>
