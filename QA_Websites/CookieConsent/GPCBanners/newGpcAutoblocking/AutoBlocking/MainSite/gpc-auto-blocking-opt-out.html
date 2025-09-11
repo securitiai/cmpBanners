@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <h1>GCP : with opt-in case : auto blocking Combination of case</h1>
+    <h1>https://www.gpc-autoblocking-opt-out.com</h1>
+
+
+    <!-- ************************** -->
+
+    <!-- Print UUID to console messages https://securitiai.github.io/cmpBanners -->
+    <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidconsole.js"> </script>
+    <!-- Print UUID to Page -->
+    <button id="logbutton" onclick="displayLogs()">Show Coaptured Consent UUID</button>
+    <ul style="background-color: beige;" id="logList"></ul>
+    <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidpage.js"></script>
+
+    <!-- ***************** -->
+
+
+    <script type="text/javascript"
+        src="https://cdn-qa.securiti.xyz/consent/auto_blocking/3c11c1e2-8278-4089-966c-e05afd533d62/4b3a1696-0970-4a83-8946-5994b4a9af9b.js"></script>
+
+    <link rel='stylesheet' type='text/css' href='https://cdn-qa.securiti.xyz/consent/cookie-consent.css' />
+
+</head>
+<script>
+    Array.prototype.test = function () { }
+</script>
+
+<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+<script>
+        (function () {
+            var s = document.createElement('script');
+            s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+            s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
+            s.setAttribute('data-domain-uuid', '849e5cc5-30e8-4569-897b-1a6e2b67eac7');
+            s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+            s.setAttribute('data-skip-css', 'false');
+            s.defer = true;
+            var parent_node = document.head || document.body;
+            parent_node.appendChild(s);
+        })()
+</script>
+<!-- You may style the button by overriding class "cmp-revoke-consent" -->
+<button class="cmp-revoke-consent">Manage Cookie Preferences</button>
+
+<script src="adnantesting.js"></script>
+
+<script
+    src="https://mohitchoudhary747.github.io/cmpBanners/QA_Websites/CookieConsent/GCPBanners/newGcpAutoblocking/AutoBlocking/CookieOneJs/Cookie1.js"></script>
+
+<script
+    src="https://mohitchoudhary747.github.io/cmpBanners/QA_Websites/CookieConsent/GCPBanners/newGcpAutoblocking/AutoBlocking/CookieTwoJs/Cookie2.js"></script>
+
+
+</body>
+
+</html>
