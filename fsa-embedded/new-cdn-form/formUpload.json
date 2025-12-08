@@ -1,0 +1,44 @@
+[
+    {
+        "fields": [
+            {
+                "type": "text",
+                "labelName": "name",
+                "name": "name",
+                "selector": "[name = \"name\"]"
+            },
+            {
+                "type": "text",
+                "labelName": "email",
+                "name": "email",
+                "selector": "[name = \"email\"]"
+            },
+            {
+                "type": "text",
+                "labelName": "phone",
+                "name": "phone",
+                "selector": "[name = \"phone\"]"
+            },
+            {
+                "type": "checkbox",
+                "labelName": "Share My data",
+                "name": "sharemydata",
+                "selector": "[name = \"sharemydata\"]"
+            },
+            {
+                "type": "checkbox",
+                "labelName": "Vlog",
+                "name": "vlog",
+                "selector": "[name = \"vlog\"]"
+            },
+            {
+                "type": "checkbox",
+                "labelName": "CDN Implemented",
+                "name": "cdn",
+                "selector": "[name = \"cdn\"]"
+            }
+        ],
+        "submit": "[class = \"contact100-form-btn\"]",
+        "formSelector": "[class = \"contact100-form validate-form\"]"
+    }
+]

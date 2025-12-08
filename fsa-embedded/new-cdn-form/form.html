@@ -118,18 +118,17 @@
     <!-- Add Securiti Script here  -->
 
 
-    <script src='https://oci-fsa-sovereign.securiti.xyz/consent/form-consent-sdk.js'></script>
+    <script src='https://aug9-149-airgap-qa.securiti.xyz/consent/form-consent-sdk.js'></script>
     <script>window.addEventListener('load', function () {
             FormConsentSDK.initialize({
-                codeGenMetadata: { "formPropertyId": "6", "formSelector": "[class*=\"contact100-form validate-form\"]", "subjectIdentifiers": [{ "name": "name", "selector": "[name = \"name\"]", "isPrimary": false }, { "name": "email", "selector": "[name = \"email\"]", "isPrimary": true }, { "name": "phone", "selector": "[name = \"phone\"]", "isPrimary": false }], "consentIdentifiers": [{ "type": "checkbox", "name": "sharemydata", "selector": "[name = \"sharemydata\"]", "propertyId": 22, "consentValue": "checked" }, { "type": "checkbox", "name": "vlog", "selector": "[name = \"vlog\"]", "propertyId": 23, "consentValue": "checked" }, { "type": "checkbox", "name": "cdn", "selector": "[name = \"cdn\"]", "propertyId": 24, "consentValue": "checked" }], "consentTrigger": { "action": "click", "selector": "[class = \"contact100-form-btn\"]" } },
-                url: 'https://oci-fsa-sovereign.securiti.xyz/privaci/v1/',
-                authToken: '2163fa29-de2f-4f55-a4d7-cce350924779',
+                codeGenMetadata: { "formPropertyId": "77", "formSelector": "[class*=\"contact100-form validate-form\"]", "subjectIdentifiers": [{ "name": "name", "selector": "[name = \"name\"]", "isPrimary": false }, { "name": "email", "selector": "[name = \"email\"]", "isPrimary": true }, { "name": "phone", "selector": "[name = \"phone\"]", "isPrimary": false }], "consentIdentifiers": [{ "type": "checkbox", "name": "sharemydata", "selector": "[name = \"sharemydata\"]", "propertyId": 142, "consentValue": "checked" }, { "type": "checkbox", "name": "vlog", "selector": "[name = \"vlog\"]", "propertyId": 143, "consentValue": "checked" }, { "type": "checkbox", "name": "cdn", "selector": "[name = \"cdn\"]", "propertyId": 144, "consentValue": "checked" }], "consentTrigger": { "action": "click", "selector": "[class = \"contact100-form-btn\"]" } },
+                url: 'https://aug9-149-airgap-qa.securiti.xyz/privaci/v1/',
+                authToken: '65855115-b63e-4e1a-9b2c-383f8a978e4c',
                 orgId: '1',
                 onConsentSuccess: null,
                 onConsentFailure: null
             })
         })</script>
-
 
 
     <!-- Securiti Scrit Ends here -->
