@@ -1,17 +1,24 @@
-<iframe src="https://uiautomationtest654273.qa.privaciops.com/privacy-center-embed" style="border: none;width: 100%;height: 800px;"></iframe>
-<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
-<script>
-(function () {
-	var s = document.createElement('script');
-	s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
-	s.setAttribute('data-tenant-uuid', 'dc4a0024-415b-4109-946a-a65a1d25edc1');
-	s.setAttribute('data-domain-uuid', '9ce0a221-0a70-4597-8c24-1dfbdb343669');
-	s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
-	s.setAttribute('data-skip-css', 'false');
-	s.defer = true;
-	var parent_node = document.head || document.body;
-	parent_node.appendChild(s);
-})()
-</script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+      <script>
+      (function () {
+        var s = document.createElement('script');
+        s.src = 'https://cdn-dev.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+        s.setAttribute('data-tenant-uuid', 'a671e20a-47ca-441b-a23c-33430ad1aa10');
+        s.setAttribute('data-domain-uuid', '76b70c5c-2ac1-426f-9dc5-3666a3f6d3f6');
+        s.setAttribute('data-backend-url', 'https://dev.securiti.xyz');
+        s.setAttribute('data-skip-css', 'false');
+        s.defer = true;
+        var parent_node = document.head || document.body;
+        parent_node.appendChild(s);
+      })()
+      </script>
+  </head>
+<body>
+<iframe src="https://free99479626.dsp-dev.securiti.xyz/privacy-center-embed/free99479626" style="border: none;width: 50%;height: 550px;"></iframe>
 <!-- You may style the button by overriding class "cmp-revoke-consent" -->
 <button class="cmp-revoke-consent">Manage Cookie Preferences</button>
+</body>
+</html>
