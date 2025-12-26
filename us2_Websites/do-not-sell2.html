@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<title>Embdded Banner</title>
+
+<body>
+    <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+    <script>
+        (function () {
+            var s = document.createElement('script');
+            s.src = 'https://cdn-us2.securiti.ai/consent/cookie-consent-sdk-loader.js';
+            s.setAttribute('data-tenant-uuid', 'ae1b9b07-d7db-4a92-97a0-b341a4d172a0');
+            s.setAttribute('data-domain-uuid', 'e7d53904-b892-4269-92fd-66802816d15f');
+            s.setAttribute('data-backend-url', 'https://app.us2.securiti.ai');
+            s.setAttribute('data-skip-css', 'false');
+            s.defer = true;
+            var parent_node = document.head || document.body;
+            parent_node.appendChild(s);
+        })()
+    </script>
+
+    <iframe src="https://cclinker144447.app.us2.privacycenter.cloud/privacy-center-embed"
+        style="border: none;width: 100%;height: 800px;"></iframe>
+    <!-- You may style the button by overriding class "cmp-revoke-consent" -->
+    <button class="cmp-revoke-consent">Manage Cookie Preferences</button>
+</body>
+
+</html>
