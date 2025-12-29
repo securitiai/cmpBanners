@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <h1> This is Opt-out Banner for to check the do not sell functionality </h1>
+<!-- Do Not Sell 2 Opt-out
+  -->
+<script>
+(function () {
+  var s = document.createElement('script');
+  s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+  s.setAttribute('data-tenant-uuid', 'dc4a0024-415b-4109-946a-a65a1d25edc1');
+  s.setAttribute('data-domain-uuid', 'e3dcc7d2-0855-4421-a3e7-20c4149f5ba4');
+  s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+  s.setAttribute('data-skip-css', 'false');
+  s.defer = true;
+  var parent_node = document.head || document.body;
+  parent_node.appendChild(s);
+})()
+</script>
+  </head>
+<body>
+<iframe src="https://uiautomationtest892991.qa.privaciops.com/privacy-center-embed" style="border: none;width: 100%;height: 800px;"></iframe>
+
+<!-- You may style the button by overriding class "cmp-revoke-consent" -->
+<button class="cmp-revoke-consent">Manage Cookie Preferences</button>
+
+</body>
+
+</html>
