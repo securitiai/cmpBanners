@@ -46,23 +46,17 @@
   </br>
   </br>
 
-<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+
+  <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
   <script>
     (function () {
       var s = document.createElement('script');
       s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
       s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
-      s.setAttribute('data-domain-uuid', '6469ff90-2e41-40f6-ac30-d8ab92d70802');
+      s.setAttribute('data-domain-uuid', 'e0133bf3-8a90-4a2e-bc43-b56796472772');
       s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
       s.setAttribute('data-skip-css', 'false');
       s.defer = true;
-      s.addEventListener('load', function () {
-        window.setConsentBannerParams({
-          overrideBannerLanguage: {
-            [fullUrl]: 'pt-br'
-          },
-        })
-      });
       var parent_node = document.head || document.body;
       parent_node.appendChild(s);
     })()
