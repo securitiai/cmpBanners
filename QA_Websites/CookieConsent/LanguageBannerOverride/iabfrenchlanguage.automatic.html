@@ -56,6 +56,14 @@
       s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
       s.setAttribute('data-skip-css', 'false');
       s.defer = true;
+      s.addEventListener('load', function () {
+        window.setConsentBannerParams({
+          overrideBannerLanguage: {
+            [fullUrl+"/1"]: 'pt-br',
+            [fullUrl]: 'fr'
+          },
+        })
+      });
       var parent_node = document.head || document.body;
       parent_node.appendChild(s);
     })()
