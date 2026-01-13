@@ -23,87 +23,28 @@
     <!-- External scripts -->
     <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidconsole.js"></script>
     <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidpage.js"></script>
-
+    <ul id="logList"></ul>
     <!-- Content Security Policy -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn-qa.securiti.xyz https://securitiai.github.io/cmpBanners; style-src 'self' 'unsafe-inline' https://cdn-qa.securiti.xyz; connect-src 'self' https://cdn-qa.securiti.xyz https://qa.securiti.xyz/core/v1/utils/geo/location https://qa.securiti.xyz/privaci/v1/consent/cookie/singleupload;">
 
     <!-- Additional stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://cdn-qa.securiti.xyz/consent/cookie-consent.css">
     <link rel="stylesheet" type="text/css" href="https://cdn-qa.securiti.xyz/consent/styles/51a3e686-fb5a-4c78-bd45-1a87627c4ce2/54856188-3612-4a0b-ad75-374cd7607b0d.css">
-
-
 </head>
 
 <body>
     <!-- Page content -->
-        <h1 style="color: brown;">Banner Info:</h1>
-        <h2 style="color: aquamarine;">Environment Name: QA</h2>
-        <h2 style="color: aquamarine;">Domai  n Name: https://www.office.manual.com</h2>
-        <h2 style="color: aquamarine;">Auto Dep*****nt </h2>
-        <div>CSP + Manual Deployment + Classic + Opt Out+ Banner Bottom Right (Manual) m**t- </div>
-        </br>
-        </br>
-        <!-- Inject your securiti body code here -->
-      
-        <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
-      
-        <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
-        <script defer data-strict-csp data-skip-css="false"
-          src="https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader-strict-csp.js"
-          data-tenant-uuid="b29eb313-51d2-457d-891e-721e1f67b139" data-domain-uuid="4d98fbf0-d1b2-4696-a141-9ba432419f65"
-          data-backend-url="https://qa.securiti.xyz">
-          </script>
-      
+    <h1>This is for QA CSP on test***demo : https://www.of**ce.com</h1>
+    <h1>This banner has absolute old css PATH, and domin is white listed for .js file</h1>
+    <ul id="logList"></ul>
+    <!-- Consent banner script -->
+    <script defer data-strict-csp src="https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-strict-csp.js"
+            data-tenant-uuid="51a3e686-fb5a-4c78-bd45-1a87627c4ce2" 
+            data-domain-uuid="54856188-3612-4a0b-ad75-374cd7607b0d"
+            data-backend-url="https://qa.securiti.xyz">
+    </script>
+
     <!-- Custom styling for consent banner -->
     <button class="cmp-revoke-consent">Revoke Consent</button>
-
-        <!-- List for logs -->
-        <ul id="logList"></ul>
-
-
-  <svg width="365" height="185">
-    <!-- Top -->
-    <rect x="70" y="10" width="220" height="130" fill="transparent" rx="150" stroke="crimson" stroke-width="10" />
-
-    <!-- Body -->
-    <rect x="10" y="70" width="340" height="80" fill="crimson" rx="30" />
-
-    <g>
-      <!-- Left line -->
-      <line x1="145" y1="10" x2="145" y2="80" stroke="crimson" stroke-width="10" />
-
-      <!-- Right line -->
-      <line x1="215" y1="10" x2="215" y2="80" stroke="crimson" stroke-width="10" />
-    </g>
-
-    <g>
-      <!-- Left bumper -->
-      <rect x="0" y="110" width="40" height="20" fill="#999" rx="10" />
-
-      <!-- Right bumper -->
-      <rect x="325" y="110" width="40" height="20" fill="#999" rx="10" />
-    </g>
-
-    <!-- Left wheel -->
-    <g>
-      <circle r="40px" fill="#222" stroke="white" stroke-width="7" cx="90" cy="140" />
-      <circle r="15px" fill="#555" cx="90" cy="140" />
-    </g>
-
-    <!-- Right wheel -->
-    <g>
-      <circle r="40px" fill="#222" stroke="white" stroke-width="7" cx="270" cy="140" />
-      <circle r="15px" fill="#555" cx="270" cy="140" />
-    </g>
-
-    <g>
-      <!-- Gold light -->
-      <circle r="15px" fill="gold" cx="340" cy="90" />
-
-      <!-- Orange light -->
-      <circle r="10px" fill="orange" cx="15" cy="90" />
-    </g>
-  </svg>
-
 </body>
 </html>
