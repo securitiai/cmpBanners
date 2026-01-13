@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Your Page Title</title>
-    
+
     <!-- CSS styles -->
     <!-- <style>
         #logbutton {
@@ -24,13 +25,15 @@
     <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidconsole.js"></script>
     <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidpage.js"></script>
     <ul id="logList"></ul> -->
-	
+
     <!-- Content Security Policy -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn-qa.securiti.xyz https://securitiai.github.io/cmpBanners; style-src 'self' 'unsafe-inline' https://cdn-qa.securiti.xyz; connect-src 'self' https://cdn-qa.securiti.xyz https://qa.securiti.xyz/core/v1/utils/geo/location https://qa.securiti.xyz/privaci/v1/consent/cookie/singleupload;">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn-qa.securiti.xyz https://securitiai.github.io/cmpBanners; style-src 'self' 'unsafe-inline' https://cdn-qa.securiti.xyz; connect-src 'self' https://cdn-qa.securiti.xyz https://qa.securiti.xyz/core/v1/utils/geo/location https://qa.securiti.xyz/privaci/v1/consent/cookie/singleupload;">
 
     <!-- Additional stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://cdn-qa.securiti.xyz/consent/cookie-consent.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn-qa.securiti.xyz/consent/styles/51a3e686-fb5a-4c78-bd45-1a87627c4ce2/54856188-3612-4a0b-ad75-374cd7607b0d.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn-qa.securiti.xyz/consent/styles/b29eb313-51d2-457d-891e-721e1f67b139/7ae78afb-2995-40de-a76e-00e0d935c281.css">
 </head>
 
 <body>
@@ -38,14 +41,15 @@
     <h1>This is for QA CSP on test***demo : https://www.of**ce.com</h1>
     <h1>This banner has absolute old css PATH, and domin is white listed for .js file</h1>
 
-    <!-- Consent banner script -->
-    <script defer data-strict-csp src="https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-strict-csp.js"
-            data-tenant-uuid="51a3e686-fb5a-4c78-bd45-1a87627c4ce2" 
-            data-domain-uuid="54856188-3612-4a0b-ad75-374cd7607b0d"
-            data-backend-url="https://qa.securiti.xyz">
-    </script>
 
+    <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+    <script defer data-strict-csp data-skip-css="false"
+        src="https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader-strict-csp.js"
+        data-tenant-uuid="b29eb313-51d2-457d-891e-721e1f67b139" data-domain-uuid="7ae78afb-2995-40de-a76e-00e0d935c281"
+        data-backend-url="https://qa.securiti.xyz">
+        </script>
     <!-- Custom styling for consent banner -->
     <button class="cmp-revoke-consent">Revoke Consent</button>
 </body>
+
 </html>
