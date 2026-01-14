@@ -2,32 +2,34 @@
 <html lang="en-us" prefix="og: http://ogp.me/ns#">
 
 <head>
-  
+
   <h1 style="color: brown;">Banner Info:</h1>
   <h1 style="color: green;"> ADA Compliance - Opt-in Multi-Level | https://ada.multi.opt-in.com</h1>
 
-<!-- ************************** -->
-<style>
-  #logbutton {
-    background-color: blue;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    position: fixed;
-    top: 20px; /* Adjust top position as needed */
-    right: 20px; /* Adjust right position as needed */
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-</style>
+  <!-- ************************** -->
+  <style>
+    #logbutton {
+      background-color: blue;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      position: fixed;
+      top: 20px;
+      /* Adjust top position as needed */
+      right: 20px;
+      /* Adjust right position as needed */
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
   <!-- Print UUID to console messages https://securitiai.github.io/cmpBanners -->
   <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidconsole.js"> </script>
-    <!-- Print UUID to Page -->
+  <!-- Print UUID to Page -->
   <button id="logbutton" onclick="displayLogs()">Show Coaptured Consent UUID</button>
   <ul style="background-color: beige;" id="logList"></ul>
   <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidpage.js"></script>
@@ -37,14 +39,28 @@
   </br>
   </br>
 
-  
 
 
-<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
-<!-- Script to be added here -->
 
+  <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+  <!-- Script to be added here -->
+
+  <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+  <script>
+    (function () {
+      var s = document.createElement('script');
+      s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+      s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
+      s.setAttribute('data-domain-uuid', '3700a8bd-b6cd-451a-98b3-70f07b154ba7');
+      s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+      s.setAttribute('data-skip-css', 'false');
+      s.defer = true;
+      var parent_node = document.head || document.body;
+      parent_node.appendChild(s);
+    })()
+  </script>
   <!-- You may style the button by overriding class "cmp-revoke-consent" -->
-<button class="cmp-revoke-consent">Manage Cookie Preferences</button>
+  <button class="cmp-revoke-consent">Manage Cookie Preferences</button>
 </head>
 
 <body>
