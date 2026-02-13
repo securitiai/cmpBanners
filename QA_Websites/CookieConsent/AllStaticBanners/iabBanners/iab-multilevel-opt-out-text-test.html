@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAB Multi-Level Opt-Out Banner Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        .test-info {
+            background-color: #e7f3ff;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .test-info h2 {
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        .test-info ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .test-info li {
+            margin: 8px 0;
+        }
+
+        .steps {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .steps h3 {
+            margin-top: 0;
+            color: #856404;
+        }
+
+        .steps ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .steps li {
+            margin: 8px 0;
+        }
+
+        .expected-issue {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .expected-issue h3 {
+            margin-top: 0;
+            color: #721c24;
+        }
+
+        .button-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .cmp-revoke-consent {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .cmp-revoke-consent:hover {
+            background-color: #0056b3;
+        }
+
+        .config-info {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .config-info h3 {
+            margin-top: 0;
+        }
+
+        .config-info code {
+            background-color: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .content-section {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>IAB Multi-Level Banner - Opt-Out Text Test</h1>
+
+        <div class="test-info">
+            <h2>Test Purpose</h2>
+            <ol>
+                <li>This page is designed to test whether the opt-out text is correctly displayed in the IAB multi-level banner.</li>
+                <li>There is a known issue where the opt-out tab gets removed from the UI under certain navigation conditions.</li>
+            </ol>
+        </div>
+
+        <div class="config-info">
+            <h3>Configuration Details</h3>
+            <p><strong>Domain Group:</strong> <code>iab-optout</code></p>
+            <p><strong>Domain:</strong> <code>https://iab-opt-out-issue-test.com</code></p>
+        </div>
+
+        <div class="steps">
+            <h3>Steps to Reproduce the Issue</h3>
+            <ol>
+                <li>Wait for the banner to load on page load (or click the "Manage Cookie Preferences" button below)</li>
+                <li><strong>Click on the "IAB Purposes" tab</strong> in the banner</li>
+                <li><strong>Navigate back to "Cookie Preferences"</strong> tab</li>
+                <li><strong>Expand the description</strong> for any cookie category</li>
+                <li>Observe if the opt-out tab is still visible</li>
+            </ol>
+        </div>
+
+        <div class="expected-issue">
+            <h3>Expected Issue</h3>
+            <p><strong>Problem:</strong> The opt-out tab gets removed from the UI after following the above steps.</p>
+            <p><strong>Expected Behavior:</strong> The opt-out tab should remain visible and functional even after navigating between tabs and expanding descriptions.</p>
+        </div>
+
+        <div class="button-container">
+            <button class="cmp-revoke-consent">Manage Cookie Preferences</button>
+        </div>
+
+        <div class="content-section">
+            <h2>Sample Content</h2>
+            <p>This is sample content for the test page. The cookie consent banner should appear on page load.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+
+    <!-- Cookie Consent SDK Script -->
+    <script>
+    (function () {
+        var s = document.createElement('script');
+        s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+        s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
+        s.setAttribute('data-domain-uuid', 'd88ae8fd-1f7d-46da-ba0e-dc719e3365e2');
+        s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+        s.setAttribute('data-skip-css', 'false');
+        s.defer = true;
+        var parent_node = document.head || document.body;
+        parent_node.appendChild(s);
+    })()
+    </script>
+</body>
+</html>
