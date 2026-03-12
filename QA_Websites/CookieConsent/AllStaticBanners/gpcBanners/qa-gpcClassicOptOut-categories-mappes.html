@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-us" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <h1 style="color: brown;">Banner Info:</h1>
+    <h2 style="color: aquamarine;">Environment Name: QA</h2>
+    <h2 style="color: aquamarine;">Domain Name: https://www.myintervals.com/</h2>
+    <div>GPC Classic | Opt Out | Category Mapped</div>
+    </br>
+    </br>
+
+<!-- ************************** -->
+<style>
+  #logbutton {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px; /* Adjust top position as needed */
+    right: 20px; /* Adjust right position as needed */
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+</style>
+  <!-- Print UUID to console messages https://securitiai.github.io/cmpBanners -->
+  <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidconsole.js"> </script>
+    <!-- Print UUID to Page -->
+  <button id="logbutton" onclick="displayLogs()">Show Coaptured Consent UUID</button>
+  <ul style="background-color: beige;" id="logList"></ul>
+  <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidpage.js"></script>
+
+  <!-- ***************** -->
+
+    <!-- Inject your securiti body code here -->
+    <link rel='stylesheet' type='text/css' href='https://cdn-qa.securiti.xyz/consent/cookie-consent.css' />
+</head>
+
+<body>
+    <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+<script>
+(function () {
+    var s = document.createElement('script');
+    s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+    s.setAttribute('data-tenant-uuid', '3c11c1e2-8278-4089-966c-e05afd533d62');
+    s.setAttribute('data-domain-uuid', '65e8f35b-5cc8-4f4d-bc65-916b5978ba7e');
+    s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+    s.setAttribute('data-skip-css', 'false');
+    s.defer = true;
+    var parent_node = document.head || document.body;
+    parent_node.appendChild(s);
+})()
+</script>
+    <!-- You may style the button by overriding class "cmp-revoke-consent" -->
+<button class="cmp-revoke-consent">Manage Cookie Preferences</button>
+<svg width="365" height="185">
+    <!-- Top -->
+      <rect x="70" y="10" width="220" height="130" fill="transparent" rx="150" stroke="crimson" stroke-width="10" />
+
+    <!-- Body -->
+      <rect x="10" y="70" width="340" height="80" fill="crimson" rx="30" />
+
+    <g>
+    <!-- Left line -->
+      <line x1="145" y1="10" x2="145" y2="80" stroke="crimson" stroke-width="10"/>
+
+    <!-- Right line -->
+      <line x1="215" y1="10" x2="215" y2="80" stroke="crimson" stroke-width="10"/>
+    </g>
+
+    <g>
+    <!-- Left bumper -->
+      <rect x="0" y="110" width="40" height="20" fill="#999" rx="10" />
+
+    <!-- Right bumper -->
+      <rect x="325" y="110" width="40" height="20" fill="#999" rx="10" />
+    </g>
+
+    <!-- Left wheel -->
+    <g>
+      <circle r="40px" fill="#222" stroke="white" stroke-width="7" cx="90" cy="140"/>
+      <circle r="15px" fill="#555" cx="90" cy="140"/>
+    </g>
+
+    <!-- Right wheel -->
+    <g>
+      <circle r="40px" fill="#222" stroke="white" stroke-width="7" cx="270" cy="140"/>
+      <circle r="15px" fill="#555" cx="270" cy="140"/>
+    </g>
+
+    <g>
+    <!-- Gold light -->
+      <circle r="15px" fill="gold" cx="340" cy="90"/>
+
+    <!-- Orange light -->
+      <circle r="10px" fill="orange" cx="15" cy="90"/>
+    </g>
+</svg>
+</body>
+
+</html>
