@@ -1,5 +1,5 @@
-const PUB = window.parent.postMessage;
-const SUB = window.parent.addEventListener;
+const PUB = window.parent.postMessage.bind(window.parent);
+const SUB = window.parent.addEventListener.bind(window.parent);
 
 const containerSelector = '#consents';
 const REGION_DELIMETER = '~';
@@ -98,19 +98,15 @@ const VALID_REGION_CODES = Object.keys(REGION_MAPPING);
     config.regionCode = regionCode;
     config.tenantId = tenantId;
 
-    loadPlatform(config);
-
-    setTimeout(async () => {
-      if(isIframeLoaded) {
-        await initSDKConfig(config);
-      }
-    }, 2000)
+    loadPlatform(config, async () => {
+      await initSDKConfig(config);
+    });
   }
 
   /**
    * It loads the region script and css in the iframe dynamically.
    */
-   function loadPlatform(config) {
+   function loadPlatform(config, onReady) {
     // extract the region code
     let regionCode = config.regionCode || null;
 
@@ -142,6 +138,14 @@ const VALID_REGION_CODES = Object.keys(REGION_MAPPING);
     scriptTag.setAttribute("data-securiti-base-url", mapping.api);
     scriptTag.setAttribute("src", cdnJsUrl);
 
+    scriptTag.onload = () => {
+      isIframeLoaded = true;
+      if (onReady) onReady();
+    };
+    scriptTag.onerror = () => {
+      console.error('Failed to load SDK script from CDN:', cdnJsUrl);
+    };
+
     iframeNode.appendChild(scriptTag);
 
     let linkTag = document.createElement("link")
@@ -149,8 +153,6 @@ const VALID_REGION_CODES = Object.keys(REGION_MAPPING);
     linkTag.setAttribute("href", cdnCssURl)
 
     iframeNode.appendChild(linkTag)
-
-    isIframeLoaded = true
   }
 
   async function initSDKConfig(config) {
@@ -202,7 +204,7 @@ const VALID_REGION_CODES = Object.keys(REGION_MAPPING);
   function sendEvent(type, data) {
     PUB({
       type, data
-    }, window.parent.origin)
+    }, '*')
   }
 
 

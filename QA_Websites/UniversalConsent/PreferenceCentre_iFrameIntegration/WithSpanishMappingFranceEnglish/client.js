@@ -1,5 +1,5 @@
-const PUB = window.postMessage;
-const SUB = window.addEventListener;
+const PUB = window.postMessage.bind(window);
+const SUB = window.addEventListener.bind(window);
 
 // Iframe Configuration to render preference center.
 const CREDENTIALS = {
