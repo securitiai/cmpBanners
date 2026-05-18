@@ -6,26 +6,26 @@
   -->
 
 <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
-<script>
-(function () {
-	var s = document.createElement('script');
-	s.src = 'https://cdn-qa-stage.securiti.xyz/consent/cookie-consent-sdk-loader.js';
-	s.setAttribute('data-tenant-uuid', 'd4697fc2-4624-4e09-b00a-5b3e954cf2a0');
-	s.setAttribute('data-domain-uuid', 'b6c19527-8bb9-4aa0-b184-1118d24df471');
-	s.setAttribute('data-backend-url', 'https://qa-stage.securiti.xyz');
-	s.setAttribute('data-skip-css', 'false');
-	s.defer = true;
-	var parent_node = document.head || document.body;
-	parent_node.appendChild(s);
-})()
-</script>
+	<script>
+		(function () {
+			var s = document.createElement('script');
+			s.src = 'https://cdn-qa-stage.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+			s.setAttribute('data-tenant-uuid', 'd4697fc2-4624-4e09-b00a-5b3e954cf2a0');
+			s.setAttribute('data-domain-uuid', 'b5765d4c-0728-46e9-9a01-f63be3780397');
+			s.setAttribute('data-backend-url', 'https://qa-stage.securiti.xyz');
+			s.setAttribute('data-skip-css', 'false');
+			s.defer = true;
+			var parent_node = document.head || document.body;
+			parent_node.appendChild(s);
+		})()
+		</script>
   </head>
 <body>
-<iframe src="https://uiautomationtest365548.qa.privaciops.com/privacy-center-embed" style="border: none;width: 100%;height: 800px;"></iframe>
+	<iframe src="https://uiautomationtest410597.qa-stage.privaciops.com/privacy-center-embed" style="border: none;width: 100%;height: 800px;"></iframe>
 
 <!-- You may style the button by overriding class "cmp-revoke-consent" -->
 <button class="cmp-revoke-consent">Manage Cookie Preferences</button>
- 
+
 
 </body>
 
