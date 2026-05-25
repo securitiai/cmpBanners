@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <h1> This is Hybrid Banner for to check the do not sell functionality </h1>
+<!-- Do Not Sell 3 Hybrid
+  -->
+
+
+<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+<script>
+(function () {
+    var s = document.createElement('script');
+    s.src = 'https://cdn-us2.securiti.ai/consent/cookie-consent-sdk-loader.js';
+    s.setAttribute('data-tenant-uuid', '7c646485-a941-442d-aba4-701e5029919a');
+    s.setAttribute('data-domain-uuid', '96e4d263-6fc6-47f3-a421-dc3159499202');
+    s.setAttribute('data-backend-url', 'https://app.us2.securiti.ai');
+    s.setAttribute('data-skip-css', 'false');
+    s.defer = true;
+    var parent_node = document.head || document.body;
+    parent_node.appendChild(s);
+})()
+</script>
+  </head>
+<body>
+<iframe src="https://commonautomation534370.app.us2.privacycenter.cloud/privacy-center-embed" style="border: none;width: 100%;height: 800px;"></iframe>
+
+<!-- You may style the button by overriding class "cmp-revoke-consent" -->
+<button class="cmp-revoke-consent">Manage Cookie Preferences</button>
+
+
+</body>
+
+</html>
