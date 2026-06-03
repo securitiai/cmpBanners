@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+    <title>GTMQA_cmptestwebsite sameen</title>
+      <script async src='https://cdn-qa.securiti.xyz/consent/cookie_banner/2dff0f1b-7fd3-4bfc-accb-5a008a1c3b69/15752ba9-c1c6-4e74-9732-5eb5c9c830e2/google_consent_defaults.js'></script>
+
+ 
+
+
+<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+<!--
+<script>
+(function () {
+	var s = document.createElement('script');
+	s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+	s.setAttribute('data-tenant-uuid', '81195247-fa06-449b-9a66-db91a93ed47d');
+	s.setAttribute('data-domain-uuid', '6d9f6176-0c8f-4007-bc3a-d7f9ba6f3f01');
+	s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+	s.setAttribute('data-skip-css', 'false');
+	s.defer = true;
+	var parent_node = document.head || document.body;
+	parent_node.appendChild(s);
+})()
+</script>
+ --> 
+  
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M4SW2LWL');</script>
+<!-- End Google Tag Manager -->
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4SW2LWL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+ <button onclick="fireEvent('securiti_scanning')">Fire Securiti Scanning Event</button>
+
+
+
+ <script>
+ 	const eventPayload = {
+ 		'securiti_scanning': {
+ 			SecuritiScanning: true
+ 		}
+ 	}
+ 	 function fireEvent(evtName) {
+ 	 	if(!evtName || !eventPayload[evtName]) return
+ 	 	window.dataLayer = window.dataLayer || []
+ 	 	window.dataLayer.push({
+ 	 		event: evtName, 
+ 	 		...(eventPayload[evtName] || {})
+ 	 	})
+
+ 	 }
+ </script>
+</body>
+</html>
