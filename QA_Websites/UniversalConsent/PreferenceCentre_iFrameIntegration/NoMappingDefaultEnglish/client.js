@@ -1,12 +1,16 @@
 const PUB = window.postMessage;
 const SUB = window.addEventListener;
 
+// Fallback ISO 3166-1 alpha-2 code used only if live geolocation cannot be resolved.
+// (The backend rejects the literal string 'default', so we can never fall back to that.)
+const FALLBACK_LOCATION_CODE = 'us';
+
 // Iframe Configuration to render preference center.
 const CREDENTIALS = {
     tenantId: "qa~125068f6-fcaa-4514-aeef-a3ec9f0a870d",
     preferenceCenterId: "395fb968-72ab-408f-a88f-e5b3a7a99a75",
     primaryIdentifier: '',
-    locationCode: 'default',
+    locationCode: FALLBACK_LOCATION_CODE,
     languageCode: 'en',
     implicitFlow: true,
     implicitRecordConsents: false,
@@ -14,6 +18,10 @@ const CREDENTIALS = {
 };
 
 (function () {
+    // Kick off geolocation detection immediately so it resolves (or times out) before the
+    // iframe finishes loading, without delaying iframe load itself.
+    const locationCodeReady = detectLocationCode();
+
     //? STEP 1: subscribe to window events
     SUB("message", handleWindowEvents);
 
@@ -23,8 +31,8 @@ const CREDENTIALS = {
     const preferenceIframeRef = document.getElementById("preferenceIframe");
 
     preferenceIframeRef.addEventListener("load", (ev) => {
-        //? STEP 3: Load the config into iframe/sdk.
-        loadConfigIntoIframe()
+        //? STEP 3: Load the config into iframe/sdk, once the real location code is known.
+        locationCodeReady.then(loadConfigIntoIframe);
     });
 
     //? STEP 4: Attach a listener to the primary identifier and let the iframe know about the change.
@@ -94,6 +102,43 @@ const CREDENTIALS = {
 
     function getEventType(evt) {
         return evt.data.type || "UNKNOWN";
+    }
+
+    // Resolve the caller's real ISO 3166-1 alpha-2 location code on the fly via IP geolocation,
+    // and set it on CREDENTIALS before the config is sent into the iframe. The backend's
+    // singleupload consent endpoint rejects the literal string 'default', so CREDENTIALS keeps
+    // FALLBACK_LOCATION_CODE until (unless) a lookup below succeeds.
+    function detectLocationCode() {
+        const withTimeout = (promise, ms) => Promise.race([
+            promise,
+            new Promise((_, reject) => setTimeout(() => reject(new Error('geo lookup timed out')), ms))
+        ]);
+
+        const applyIfValid = (code) => {
+            if (typeof code === 'string' && /^[A-Za-z]{2}$/.test(code)) {
+                CREDENTIALS.locationCode = code.toLowerCase();
+                return true;
+            }
+            return false;
+        };
+
+        // Primary provider, with a secondary fallback provider if it fails/times out.
+        return withTimeout(fetch('https://get.geojs.io/v1/ip/country.json').then((res) => res.json()), 4000)
+            .then((data) => {
+                if (!applyIfValid(data && data.country)) {
+                    throw new Error('primary geo lookup returned no usable country code');
+                }
+            })
+            .catch(() => withTimeout(fetch('https://api.country.is/').then((res) => res.json()), 4000)
+                .then((data) => {
+                    if (!applyIfValid(data && data.country)) {
+                        throw new Error('fallback geo lookup returned no usable country code');
+                    }
+                })
+            )
+            .catch(() => {
+                // Both geo lookups failed - CREDENTIALS.locationCode stays at FALLBACK_LOCATION_CODE.
+            });
     }
 
 })();
