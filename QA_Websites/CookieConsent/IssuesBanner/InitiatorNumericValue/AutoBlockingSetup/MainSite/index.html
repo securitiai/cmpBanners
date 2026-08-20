@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <h1>Initiators Numeric Value Issue | Realistic Auto Blocking Setup | QA</h1>
+    <p>Simulates real third-party vendor tags (Google Analytics, Meta Pixel, Live Chat) plus one
+        Strictly Necessary script, each dropping its own cookie so you can visually confirm whether
+        auto blocking actually stopped the non-essential ones before consent.</p>
+
+    <!-- ************************** -->
+
+    <!-- Print UUID to console messages https://securitiai.github.io/cmpBanners -->
+    <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidconsole.js"> </script>
+    <!-- Print UUID to Page -->
+    <button id="logbutton" onclick="displayLogs()">Show Coaptured Consent UUID</button>
+    <ul style="background-color: beige;" id="logList"></ul>
+    <script src="https://securitiai.github.io/cmpBanners/zloguuidscripts/printuuidpage.js"></script>
+
+    <!-- ***************** -->
+
+    <script type="text/javascript" src="https://cdn-qa.securiti.xyz/consent/auto_blocking/b29eb313-51d2-457d-891e-721e1f67b139/462c3145-5518-49a1-8226-75039a24dc1d.js"></script>
+    <script type="text/javascript" src="https://cdn-qa.securiti.xyz/consent/sdk-stub.js" defer></script>
+
+    <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+    <script>
+        (function () {
+            var s = document.createElement('script');
+            s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+            s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
+            s.setAttribute('data-domain-uuid', '462c3145-5518-49a1-8226-75039a24dc1d');
+            s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+            s.setAttribute('data-skip-css', 'false');
+            s.defer = true;
+            var parent_node = document.head || document.body;
+            parent_node.appendChild(s);
+        })()
+    </script>
+
+    <!-- You may style the button by overriding class "cmp-revoke-consent" -->
+    <button class="cmp-revoke-consent">Revoke Consent</button>
+
+    <style>
+        #cookieStatusPanel {
+            margin-top: 20px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            font-family: monospace;
+            max-width: 480px;
+        }
+        #cookieStatusPanel div { padding: 2px 0; }
+        .present { color: #b00020; }
+        .blocked { color: #1a7f37; }
+    </style>
+</head>
+
+<body>
+    <!-- Analytics category vendor tag -->
+    <script src="https://securitiai.github.io/cmpBanners/QA_Websites/CookieConsent/IssuesBanner/InitiatorNumericValue/AutoBlockingSetup/GoogleAnalyticsScript/google-analytics.js"></script>
+
+    <!-- Marketing/Advertising category vendor tag -->
+    <script src="https://securitiai.github.io/cmpBanners/QA_Websites/CookieConsent/IssuesBanner/InitiatorNumericValue/AutoBlockingSetup/MetaPixelScript/meta-pixel.js"></script>
+
+    <!-- Functional category vendor tag -->
+    <script src="https://securitiai.github.io/cmpBanners/QA_Websites/CookieConsent/IssuesBanner/InitiatorNumericValue/AutoBlockingSetup/LiveChatScript/live-chat-widget.js"></script>
+
+    <!-- Strictly Necessary script - control case, must never be blocked -->
+    <script src="https://securitiai.github.io/cmpBanners/QA_Websites/CookieConsent/IssuesBanner/InitiatorNumericValue/AutoBlockingSetup/EssentialSessionScript/session-tracker.js"></script>
+
+    <h2>Cookie / Script Execution Status</h2>
+    <button id="checkStatusBtn" onclick="checkCookieStatus()">Check Which Scripts Actually Ran</button>
+    <div id="cookieStatusPanel"></div>
+
+    <script>
+        function checkCookieStatus() {
+            var expected = [
+                { name: '_ga', vendor: 'Google Analytics', category: 'Analytics' },
+                { name: '_fbp', vendor: 'Meta Pixel', category: 'Marketing/Advertising' },
+                { name: 'chat_session', vendor: 'Live Chat Widget', category: 'Functional' },
+                { name: 'session_id', vendor: 'Session Tracker', category: 'Strictly Necessary' }
+            ];
+            var panel = document.getElementById('cookieStatusPanel');
+            panel.innerHTML = '';
+            expected.forEach(function (item) {
+                var found = document.cookie.indexOf(item.name + '=') !== -1;
+                var row = document.createElement('div');
+                row.className = found ? 'present' : 'blocked';
+                row.textContent = item.vendor + ' [' + item.category + '] cookie "' + item.name + '": ' +
+                    (found ? 'RAN (cookie present)' : 'BLOCKED (cookie not found)');
+                panel.appendChild(row);
+            });
+        }
+    </script>
+</body>
+
+</html>
