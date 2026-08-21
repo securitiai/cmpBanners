@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <h1>Initiators Numeric Value Issue | Realistic Auto Blocking Setup | QA</h1>
+    <h1>Advanced Autoblocking Scenario Testing | QA</h1>
     <p>Simulates real third-party vendor tags (Google Analytics, Meta Pixel, Live Chat) plus one
         Strictly Necessary script, each dropping its own cookie so you can visually confirm whether
         auto blocking actually stopped the non-essential ones before consent.</p>
@@ -17,7 +17,8 @@
 
     <!-- ***************** -->
 
-    <script type="text/javascript" src="https://cdn-qa.securiti.xyz/consent/auto_blocking/b29eb313-51d2-457d-891e-721e1f67b139/462c3145-5518-49a1-8226-75039a24dc1d.js"></script>
+    <!-- Fill in your own tenant/domain UUID below before using this template -->
+    <script type="text/javascript" src="https://cdn-qa.securiti.xyz/consent/auto_blocking/<tenant-uuid>/<domain-uuid>.js"></script>
     <script type="text/javascript" src="https://cdn-qa.securiti.xyz/consent/sdk-stub.js" defer></script>
 
     <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
@@ -25,8 +26,8 @@
         (function () {
             var s = document.createElement('script');
             s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
-            s.setAttribute('data-tenant-uuid', 'b29eb313-51d2-457d-891e-721e1f67b139');
-            s.setAttribute('data-domain-uuid', '462c3145-5518-49a1-8226-75039a24dc1d');
+            s.setAttribute('data-tenant-uuid', '<tenant-uuid>');
+            s.setAttribute('data-domain-uuid', '<domain-uuid>');
             s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
             s.setAttribute('data-skip-css', 'false');
             s.defer = true;
@@ -54,16 +55,16 @@
 
 <body>
     <!-- Analytics category vendor tag -->
-    <script src="https://securitiai.github.io/cmpBanners/QA_Websites/CookieConsent/IssuesBanner/InitiatorNumericValue/AutoBlockingSetup/GoogleAnalyticsScript/google-analytics.js"></script>
+    <script src="https://securitiai.github.io/cmpBanners/QA_Websites/CookieConsent/AllStaticBanners/AutoBlockingSetup/GoogleAnalyticsScript/google-analytics.js"></script>
 
     <!-- Marketing/Advertising category vendor tag -->
-    <script src="https://securitiai.github.io/cmpBanners/QA_Websites/CookieConsent/IssuesBanner/InitiatorNumericValue/AutoBlockingSetup/MetaPixelScript/meta-pixel.js"></script>
+    <script src="https://securitiai.github.io/cmpBanners/QA_Websites/CookieConsent/AllStaticBanners/AutoBlockingSetup/MetaPixelScript/meta-pixel.js"></script>
 
     <!-- Functional category vendor tag -->
-    <script src="https://securitiai.github.io/cmpBanners/QA_Websites/CookieConsent/IssuesBanner/InitiatorNumericValue/AutoBlockingSetup/LiveChatScript/live-chat-widget.js"></script>
+    <script src="https://securitiai.github.io/cmpBanners/QA_Websites/CookieConsent/AllStaticBanners/AutoBlockingSetup/LiveChatScript/live-chat-widget.js"></script>
 
     <!-- Strictly Necessary script - control case, must never be blocked -->
-    <script src="https://securitiai.github.io/cmpBanners/QA_Websites/CookieConsent/IssuesBanner/InitiatorNumericValue/AutoBlockingSetup/EssentialSessionScript/session-tracker.js"></script>
+    <script src="https://securitiai.github.io/cmpBanners/QA_Websites/CookieConsent/AllStaticBanners/AutoBlockingSetup/EssentialSessionScript/session-tracker.js"></script>
 
     <h2>Cookie / Script Execution Status</h2>
     <button id="checkStatusBtn" onclick="checkCookieStatus()">Check Which Scripts Actually Ran</button>
