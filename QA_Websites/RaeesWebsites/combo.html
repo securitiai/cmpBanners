@@ -1,23 +1,26 @@
+<!DOCTYPE html>
 <html>
+<body>
 
-<head>
+<h2>Cross Functionality check</h2>
+<p>Hybrid Banner || Custom Category || Always Active || Decline || Always Guaranteed Combo || Do Not Sell </p>
+
+<iframe src="https://uiautomationtest250041.qa.privaciops.com/privacy-center-embed" style="border: none;width: 100%;height: 800px;"></iframe>
+
+</body>
+</html>
 
 <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
 <script>
 (function () {
-    var s = document.createElement('script');
-    s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
-    s.setAttribute('data-tenant-uuid', 'dc4a0024-415b-4109-946a-a65a1d25edc1');
-    s.setAttribute('data-domain-uuid', '7f7b7f51-9485-4c3f-8815-713026924924');
-    s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
-    s.setAttribute('data-skip-css', 'false');
-    s.defer = true;
-    var parent_node = document.head || document.body;
-    parent_node.appendChild(s);
+	var s = document.createElement('script');
+	s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+	s.setAttribute('data-tenant-uuid', 'dc4a0024-415b-4109-946a-a65a1d25edc1');
+	s.setAttribute('data-domain-uuid', '7f7b7f51-9485-4c3f-8815-713026924924');
+	s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
+	s.setAttribute('data-skip-css', 'false');
+	s.defer = true;
+	var parent_node = document.head || document.body;
+	parent_node.appendChild(s);
 })()
 </script>
-<!-- You may style the button by overriding class "cmp-revoke-consent" -->
-<button class="cmp-revoke-consent">Manage Cookie Preferences</button>
-</head>
-
-</html>
