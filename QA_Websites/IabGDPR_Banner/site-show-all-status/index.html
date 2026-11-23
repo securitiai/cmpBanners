@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html class='v2' dir='ltr' lang='en' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
-<link href='https://www.blogger.com/static/v1/widgets/2872013778-css_bundle_v2.css' rel='stylesheet' type='text/css'/>
-<!-- Securiti CMP SDK loader (QA) -->
+<!-- Securiti CMP auto-blocking (QA) - must be the first script in head -->
+<script type="text/javascript" src="https://cdn-qa.securiti.xyz/consent/auto_blocking/b29eb313-51d2-457d-891e-721e1f67b139/97b0a771-49e4-476d-85fa-39c2c1984658.js"></script>
+<!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
 <script type='text/javascript'>
         //<![CDATA[
         (function () {
@@ -18,6 +19,7 @@
         })()
         //]]>
         </script>
+<link href='https://www.blogger.com/static/v1/widgets/2872013778-css_bundle_v2.css' rel='stylesheet' type='text/css'/>
 <!-- Suppress Blogger's built-in EU cookie notice so only the Securiti CMP banner shows -->
 <script type='text/javascript'>
         //<![CDATA[
@@ -1060,7 +1062,7 @@ Powered by <a href='https://www.blogger.com' target='_blank'>Blogger</a>.
           function renderEnv() {
             var first = document.head.querySelector('script');
             var firstSrc = first && first.src ? first.src : '(inline)';
-            $('e-first').innerHTML = /securiti\.ai\/consent\/auto_blocking/.test(firstSrc) ? pill('ok', 'Securiti auto-blocking') : pill('bad', esc(firstSrc).slice(0, 80));
+            $('e-first').innerHTML = /securiti\.(ai|xyz)\/consent\/auto_blocking/.test(firstSrc) ? pill('ok', 'Securiti auto-blocking') : pill('bad', esc(firstSrc).slice(0, 80));
             $('e-url').textContent = location.href;
             $('e-lang').textContent = navigator.language || '-';
             $('e-gpc').textContent = navigator.globalPrivacyControl === true ? 'on' : 'off';
